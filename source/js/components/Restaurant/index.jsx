@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { emailConfigs } from '../containers/Contact/emailConfigs'
+import { emailConfigs } from '../../containers/Contact/emailConfigs'
 
 import RestaurantHome from './dumb/RestaurantHome'
 import MenuHome from './dumb/MenuHome'
