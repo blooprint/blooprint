@@ -8,17 +8,17 @@ const MenuHeader = (props) => {
         <div>
         <MediaQuery maxWidth={767}>
             <div>
-                <h1 id="mobile_menu_header">{props.restaurantInfo.map((tableline) => {
+                <h1 className="menu_header" id="mobile_menu_header">{props.restaurantInfo.map((tableline) => {
                     if( tableline.item == 'name' ) {
                         return (
-                            <div>
+                            <div onClick={() => {
+                                    props.actions.action_viewHome()
+                                }}>
                                 {tableline.value}
                             </div>
                         )
                     }
                 })}</h1>
-
-                <div id="nav_viewHome" className="nav_button" onClick={() => {props.actions.action_viewHome()}}><p>home</p></div>
 
                 <div id="mobile_menu_buttons">
                     <div id="button_breakfast" className="mobile_menu_button" onClick={() => {props.actions.action_viewBreakfast()}}><p>break</p></div>
@@ -30,17 +30,17 @@ const MenuHeader = (props) => {
 
         <MediaQuery minWidth={768} maxWidth={991}>
             <div>
-                <h1 id="mobile_menu_header">{props.restaurantInfo.map((tableline) => {
+                <h1 className="menu_header" id="mobile_menu_header">{props.restaurantInfo.map((tableline) => {
                     if( tableline.item == 'name' ) {
                         return (
-                            <div>
+                            <div onClick={() => {
+                                    props.actions.action_viewHome()
+                                }}>
                                 {tableline.value}
                             </div>
                         )
                     }
                 })}</h1>
-
-                <div id="nav_viewHome" className="nav_button" onClick={() => {props.actions.action_viewHome()}}><p>home</p></div>
 
                 <div id="mobile_menu_buttons">
                     <div id="button_breakfast" className="mobile_menu_button" onClick={() => {props.actions.action_viewBreakfast()}}><p>breakfast</p></div>
@@ -52,17 +52,17 @@ const MenuHeader = (props) => {
 
         <MediaQuery minWidth={992}>
             <div>
-                <h1 id="menu_header">{props.restaurantInfo.map((tableline) => {
+                <h1 className="menu_header">{props.restaurantInfo.map((tableline) => {
                     if( tableline.item == 'name' ) {
                         return (
-                            <div>
+                            <div onClick={() => {
+                                    props.actions.action_viewHome()
+                                }}>
                                 {tableline.value}
                             </div>
                         )
                     }
                 })}</h1>
-
-                <div id="nav_viewHome" className="nav_button" onClick={() => {props.actions.action_viewHome()}}><p>home</p></div>
 
                 <div id="menu_buttons">
                     <div id="button_breakfast" className="menu_button" onClick={() => {props.actions.action_viewBreakfast()}}><p>breakfast</p></div>

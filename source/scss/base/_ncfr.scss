@@ -5,7 +5,6 @@
     display: block;
 }
 #restaurant_home {
-    // position: absolute;
     width: 100%;
     height: 100%;
     margin-top: 0;
@@ -13,12 +12,13 @@
     background-color: gray;
     text-align: center;
 }
-#menu_header {
+.menu_header {
     width: 100%;
     margin-top: 0;
     padding: 60px 0 15px 0;
     background-color: gray;
     text-align: center;
+    cursor: pointer;
 }
 #restaurant {
     box-sizing: border-box;

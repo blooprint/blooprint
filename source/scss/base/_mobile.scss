@@ -6,6 +6,14 @@
     height: 100%;
     padding-bottom: 1000px;
 }
+#mobile_restaurant_home {
+    width: 100%;
+    height: 100%;
+    margin-top: 0;
+    padding: 1px 0 15px 0;
+    background-color: gray;
+    text-align: center;
+}
 #mobile_menu_header {
     width: 100%;
     margin-top: 0;
@@ -52,19 +60,20 @@
     width: 100%;
 }
 #mobile_menu_item {
-    font-size: 14px;
+    font-size: 18px;
+    font-weight: bold;
     font-family: Arial;
     margin-bottom: 10px;
     padding-bottom: 10px;
     border-bottom: 1px solid white;
 }
+#mobile_item_side {
+    margin-left: 20px;
+}
 #mobile_item_price {
-    position: absolute;
-    font-size: 20px;
+    font-size: 23px;
     float: right;
     margin-top: 10px;
-    box-sizing: border-box;
-    border: 1px dashed #0f0;
 }
 #mobile_menu_item_left {
     width: 77%;

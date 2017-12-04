@@ -5,7 +5,7 @@ const Price = (props) => {
     return (
         <div id="mobile_menu_item_right" className="item_lr">
             <MediaQuery maxWidth={767}>
-                <div className="item_detail" id="item_price">
+                <div className="item_detail" id="mobile_item_price">
                     {props.price}
                 </div>
             </MediaQuery>
