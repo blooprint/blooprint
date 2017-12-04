@@ -74,6 +74,7 @@
     "react-dom": "^16.1.1",
     "react-hot-loader": "^3.0.0-beta.7",
     "react-redux": "^5.0.5",
+    "react-responsive": "^4.0.3",
     "react-responsive-audio-player": "^1.1.4",
     "react-router": "^4.1.1",
     "react-router-dom": "^4.1.1",

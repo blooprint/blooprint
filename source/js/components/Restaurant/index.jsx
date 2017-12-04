@@ -4,6 +4,8 @@ import { emailConfigs } from '../../containers/Contact/emailConfigs'
 import RestaurantHome from './dumb/RestaurantHome'
 import MenuHome from './dumb/MenuHome'
 
+import MediaQuery from 'react-responsive'
+
 const menuSections = {      // make sure to use index order in ./menuSocket
     restaurantInfo: 0,
     restaurantHours: 1,
@@ -70,10 +72,31 @@ class Restaurant extends Component {
 
         const { restaurant } = this.props
 
+        // return (
+        //     <div id="restaurant">
+        //         { restaurant.viewHome ? <RestaurantHome actions={this.props} restaurant={restaurant} restaurantInfo={restaurant.restaurantInfo} /> : <MenuHome actions={this.props} restaurant={restaurant} restaurantInfo={restaurant.restaurantInfo} /> }
+        //     </div>
+        // )
         return (
-            <div id="restaurant">
-                { restaurant.viewHome ? <RestaurantHome actions={this.props} restaurant={restaurant} restaurantInfo={restaurant.restaurantInfo} /> : <MenuHome actions={this.props} restaurant={restaurant} restaurantInfo={restaurant.restaurantInfo} /> }
-            </div>
+            <div>
+                <MediaQuery maxWidth={767}>
+                    <div id="mobile_restaurant">
+                        { restaurant.viewHome ? <RestaurantHome actions={this.props} restaurant={restaurant} restaurantInfo={restaurant.restaurantInfo} /> : <MenuHome actions={this.props} restaurant={restaurant} restaurantInfo={restaurant.restaurantInfo} /> }
+                    </div>
+                </MediaQuery>
+
+                <MediaQuery minWidth={768} maxWidth={991}>
+                    <div id="mobile_restaurant">
+                        { restaurant.viewHome ? <RestaurantHome actions={this.props} restaurant={restaurant} restaurantInfo={restaurant.restaurantInfo} /> : <MenuHome actions={this.props} restaurant={restaurant} restaurantInfo={restaurant.restaurantInfo} /> }
+                    </div>
+                </MediaQuery>
+
+                <MediaQuery minWidth={992}>
+                    <div id="restaurant">
+                        { restaurant.viewHome ? <RestaurantHome actions={this.props} restaurant={restaurant} restaurantInfo={restaurant.restaurantInfo} /> : <MenuHome actions={this.props} restaurant={restaurant} restaurantInfo={restaurant.restaurantInfo} /> }
+                    </div>
+                </MediaQuery>
+              </div>
         )
     }
 }
