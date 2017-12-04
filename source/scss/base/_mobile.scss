@@ -1,5 +1,5 @@
 #mobile_restaurant {
-    border-top: 55px solid red;
+    border-top: 25px solid red;
     background-size: cover;
     background-color: black;
     color: white;
@@ -9,12 +9,20 @@
 #mobile_menu_header {
     width: 100%;
     margin-top: 0;
-    padding: 25px 0 15px 0;
+    padding: 15px 0 15px 0;
     background-color: gray;
     text-align: center;
+    font-size: 28px;
 }
 #mobile_menu_buttons {
+    max-width: 680px;
     width: 100%;
+    margin: 0;
+    margin-left: auto;
+    margin-right: auto;
+}
+#tablet_menu_buttons {
+    width: 767px;
     margin: 0;
     left:0;
     right:0;
@@ -27,8 +35,43 @@
     box-sizing: border-box;
     border: 2px solid green;
     border-radius: 4px;
-
     margin-left: 0px;
 	margin-right: 0px;
 	background-color: #000;
+}
+.mobile_menu_button p {
+    margin-top: 10px;
+}
+#mobile_sortedMenuList {
+    margin-top: 30px;
+}
+#mobile_menu_section {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+#mobile_menu_item {
+    font-size: 14px;
+    font-family: Arial;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid white;
+}
+#mobile_item_price {
+    position: absolute;
+    font-size: 20px;
+    float: right;
+    margin-top: 10px;
+    box-sizing: border-box;
+    border: 1px dashed #0f0;
+}
+#mobile_menu_item_left {
+    width: 77%;
+    padding-left: 0;
+    margin-left: 0;
+}
+#mobile_menu_item_right {
+    margin-right: 0;
+    width: 23%;
 }

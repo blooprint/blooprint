@@ -67,8 +67,9 @@
     margin-top: 10px;
 }
 .item_lr {
-    max-width: 80%;
+    // max-width: 80%;
     display: inline-block;
+    vertical-align: middle;
 }
 #menu_buttons {
     width: 680px;
@@ -130,4 +131,12 @@
 .nav_button:hover {
     background-color: #282828;
     cursor: pointer;
+}
+#menu_item_left {
+    margin-left: 0;
+    width: 75%;
+}
+#menu_item_right {
+    margin-right: 0;
+    width: 25%;
 }

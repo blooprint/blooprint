@@ -1,5 +1,6 @@
 import React from 'react'
 import MenuSection from './MenuSection'
+import MediaQuery from 'react-responsive'
 
 const ViewSoretedMenuList = (props) => {
 
@@ -14,13 +15,39 @@ const ViewSoretedMenuList = (props) => {
     }
     else if(props.restaurant.viewBreakfast) {
         return (
-            <div id="sortedMenuList">
-                <MenuSection
-                    className="menu_block"
-                    list={props.restaurant.breakfastSpecials} />
-                <MenuSection
-                    className="menu_block"
-                    list={props.restaurant.breakfastItems} />
+            <div>
+                <MediaQuery maxWidth={767}>
+                    <div id="mobile_sortedMenuList">
+                        <MenuSection
+                            className="menu_block"
+                            list={props.restaurant.breakfastSpecials} />
+                        <MenuSection
+                            className="menu_block"
+                            list={props.restaurant.breakfastItems} />
+                    </div>
+                </MediaQuery>
+
+                <MediaQuery minWidth={768} maxWidth={991}>
+                    <div id="sortedMenuList">
+                        <MenuSection
+                            className="menu_block"
+                            list={props.restaurant.breakfastSpecials} />
+                        <MenuSection
+                            className="menu_block"
+                            list={props.restaurant.breakfastItems} />
+                    </div>
+                </MediaQuery>
+
+                <MediaQuery minWidth={992}>
+                    <div id="sortedMenuList">
+                        <MenuSection
+                            className="menu_block"
+                            list={props.restaurant.breakfastSpecials} />
+                        <MenuSection
+                            className="menu_block"
+                            list={props.restaurant.breakfastItems} />
+                    </div>
+                </MediaQuery>
             </div>
         )
     }

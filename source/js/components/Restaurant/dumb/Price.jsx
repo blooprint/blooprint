@@ -1,9 +1,26 @@
 import React from 'react'
+import MediaQuery from 'react-responsive'
 
 const Price = (props) => {
     return (
-        <div className="item_detail" id="item_price">
-            {props.price}
+        <div id="mobile_menu_item_right" className="item_lr">
+            <MediaQuery maxWidth={767}>
+                <div className="item_detail" id="item_price">
+                    {props.price}
+                </div>
+            </MediaQuery>
+
+            <MediaQuery minWidth={768} maxWidth={991}>
+                <div className="item_detail" id="item_price">
+                    {props.price}
+                </div>
+            </MediaQuery>
+
+            <MediaQuery minWidth={992}>
+                <div className="item_detail" id="item_price">
+                    {props.price}
+                </div>
+            </MediaQuery>
         </div>
     )
 }
