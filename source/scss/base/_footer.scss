@@ -1,6 +1,6 @@
 #footer {
-    position: relative;
     padding-right: 10px;
+
     left: 0;
     right: 0;
     height: 35px;
@@ -14,9 +14,10 @@
     margin-right: 10px;
 }
 #signature {
-    position: absolute;
+    position: relative;
+    margin-top:300px;
     bottom: 0;
-    right: 0;
+    margin-right: 0;
     font-size: 10px
 }
 #signature a {

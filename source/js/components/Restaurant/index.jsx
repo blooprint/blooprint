@@ -98,7 +98,6 @@ class Restaurant extends Component {
                     </div>
                 </MediaQuery>
 
-                <Footer />
               </div>
         )
     }

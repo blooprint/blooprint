@@ -6,6 +6,7 @@ import MenuHeader from './MenuHeader'
 import MenuSection from './MenuSection'
 import Schedule from './Schedule'
 import RestaurantMedia from './RestaurantMedia'
+import Footer from '../../Blooprint/dumb/Footer'
 
 
 const RestaurantHome = (props) => {
@@ -62,9 +63,12 @@ const RestaurantHome = (props) => {
                         <div className="schedule_container_item" id="schedule_seperator"/>
                         <Schedule className="schedule_container_item" restaurant={props.restaurant} />
                     </div>
-
                 </div>
+
+                <RestaurantMedia mapURL={mapURL} fbURL={fbURL} />
+                <Footer />
             </MediaQuery>
+
             <MediaQuery minWidth={768} maxWidth={991}>
                 <div id="restaurant_home">
                     <h1 className="restaurant_home_item">WELCOME TO</h1>
@@ -102,8 +106,10 @@ const RestaurantHome = (props) => {
                         <div className="schedule_container_item" id="schedule_seperator"/>
                         <Schedule className="schedule_container_item" restaurant={props.restaurant} />
                     </div>
-
                 </div>
+
+                <RestaurantMedia mapURL={mapURL} fbURL={fbURL} />
+                <Footer />
             </MediaQuery>
 
             <MediaQuery minWidth={992}>
@@ -143,11 +149,11 @@ const RestaurantHome = (props) => {
                         <div className="schedule_container_item" id="schedule_seperator"/>
                         <Schedule className="schedule_container_item" restaurant={props.restaurant} />
                     </div>
-
                 </div>
-            </MediaQuery>
 
-            <RestaurantMedia mapURL={mapURL} fbURL={fbURL} />
+                <RestaurantMedia mapURL={mapURL} fbURL={fbURL} />
+                <Footer />
+            </MediaQuery>
         </div>
     )
 }
