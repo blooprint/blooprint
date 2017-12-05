@@ -5,11 +5,23 @@ import MediaQuery from 'react-responsive'
 import MenuHeader from './MenuHeader'
 import MenuSection from './MenuSection'
 import Schedule from './Schedule'
+import RestaurantMedia from './RestaurantMedia'
 
 
 const RestaurantHome = (props) => {
 
-    console.log('hours\n',props)
+    var mapURL = ''
+    props.restaurantInfo.map((tableline) => {
+        if( tableline.item == 'map' ) {
+            mapURL = tableline.value
+        }
+    })
+    var fbURL = ''
+    props.restaurantInfo.map((tableline) => {
+        if( tableline.item == 'facebook' ) {
+            fbURL = tableline.value
+        }
+    })
 
     return (
         <div>
@@ -38,6 +50,16 @@ const RestaurantHome = (props) => {
                                 )
                             }
                         })}</h4>
+                        <h4 id="schedule_header" className="schedule_container_item">{props.restaurantInfo.map((tableline) => {
+                            if( tableline.item == 'sub_slogan' ) {
+                                return (
+                                    <div>
+                                        {tableline.value}
+                                    </div>
+                                )
+                            }
+                        })}</h4>
+                        <div className="schedule_container_item" id="schedule_seperator"/>
                         <Schedule className="schedule_container_item" restaurant={props.restaurant} />
                     </div>
 
@@ -68,6 +90,16 @@ const RestaurantHome = (props) => {
                                 )
                             }
                         })}</h4>
+                        <h4 id="schedule_header" className="schedule_container_item">{props.restaurantInfo.map((tableline) => {
+                            if( tableline.item == 'sub_slogan' ) {
+                                return (
+                                    <div>
+                                        {tableline.value}
+                                    </div>
+                                )
+                            }
+                        })}</h4>
+                        <div className="schedule_container_item" id="schedule_seperator"/>
                         <Schedule className="schedule_container_item" restaurant={props.restaurant} />
                     </div>
 
@@ -99,11 +131,23 @@ const RestaurantHome = (props) => {
                                 )
                             }
                         })}</h4>
+                        <h4 id="schedule_header" className="schedule_container_item">{props.restaurantInfo.map((tableline) => {
+                            if( tableline.item == 'sub_slogan' ) {
+                                return (
+                                    <div>
+                                        {tableline.value}
+                                    </div>
+                                )
+                            }
+                        })}</h4>
+                        <div className="schedule_container_item" id="schedule_seperator"/>
                         <Schedule className="schedule_container_item" restaurant={props.restaurant} />
                     </div>
 
                 </div>
             </MediaQuery>
+
+            <RestaurantMedia mapURL={mapURL} fbURL={fbURL} />
         </div>
     )
 }

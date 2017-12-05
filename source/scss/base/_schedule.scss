@@ -14,13 +14,24 @@
     font-size: 16px;
 }
 #schedule_header {
-    padding-bottom: 18px;
-    width: 150px;
+    padding: 0;
+    padding-left: 20px;
+    padding-right: 20px;
+    width: 100%;
     margin-left: auto;
     margin-right: auto;
+    box-sizing: border-box;
+    // border: 1px dashed white;
+}
+#schedule_seperator {
+    width: 150px;
     border-bottom: 3px solid white;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 0;
 }
 .schedule_item {
+    margin: 0;
     display: block;
     height: 30px;
 }

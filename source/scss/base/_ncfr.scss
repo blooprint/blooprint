@@ -1,8 +1,11 @@
 #restaurant_name {
     color: orange;
+    padding-left: 20px;
+    padding-right: 20px;
 }
 .restaurant_home_item {
     display: block;
+    text-align: center;
 }
 #restaurant_home {
     width: 100%;
@@ -139,4 +142,16 @@
 #menu_item_right {
     margin-right: 0;
     width: 25%;
+}
+#restaurant_home_media {
+    margin-top: 50px;
+}
+.restaurant_home_media_item {
+    width: 100px;
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+#fb_icon {
+    width: 73px;
+    margin: 15px;
 }

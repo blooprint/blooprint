@@ -3,6 +3,7 @@ import { emailConfigs } from '../../containers/Contact/emailConfigs'
 
 import RestaurantHome from './dumb/RestaurantHome'
 import MenuHome from './dumb/MenuHome'
+import Footer from '../Blooprint/dumb/Footer'
 
 import MediaQuery from 'react-responsive'
 
@@ -96,6 +97,8 @@ class Restaurant extends Component {
                         { restaurant.viewHome ? <RestaurantHome actions={this.props} restaurant={restaurant} restaurantInfo={restaurant.restaurantInfo} /> : <MenuHome actions={this.props} restaurant={restaurant} restaurantInfo={restaurant.restaurantInfo} /> }
                     </div>
                 </MediaQuery>
+
+                <Footer />
               </div>
         )
     }
