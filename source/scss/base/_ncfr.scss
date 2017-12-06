@@ -25,13 +25,14 @@
 }
 #restaurant {
     box-sizing: border-box;
-    border: 25px solid red;
-    border-top: 35px solid red;
+    border: 25px solid #ff8300;
+    border-top: 35px solid #ff8300;
     background-size: cover;
     background-color: black;
     color: white;
     height: 100%;
-    padding-bottom: 1000px;
+    min-height: 1200px;
+    padding-bottom: 0;
 }
 #menu_item {
     margin-bottom: 30px;

@@ -4,6 +4,7 @@ import ViewSoretedMenuList from './ViewSoretedMenuList'
 // import ViewDessert from './ViewDessert'
 import MenuHeader from './MenuHeader'
 import MenuSection from './MenuSection'
+import Footer from '../../Blooprint/dumb/Footer'
 
 const MenuHome = (props) => {
 
@@ -18,7 +19,7 @@ const MenuHome = (props) => {
                 restaurantInfo={props.restaurantInfo} />
 
             <ViewSoretedMenuList restaurant={props.restaurant} />
-
+            <Footer />
         </div>
     )
 }
