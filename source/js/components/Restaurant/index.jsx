@@ -8,7 +8,7 @@ import client_data from '../../../assets/restaurant/clients'
 
 import MediaQuery from 'react-responsive'
 
-class Restaurant extends Component {
+class Menu extends Component {
 
     constructor(props) {
         super(props)
@@ -33,7 +33,13 @@ class Restaurant extends Component {
 
     componentDidMount() {
 
-        this.handleBrowserTitleChange(client_data.template.browser_title)
+
+        if (process.env.NODE_ENV != "production") { // development
+            this.handleBrowserTitleChange(client_data.template.browser_title)
+        }
+        else { // production
+            this.handleBrowserTitleChange(client_data.client_00000.browser_title)
+        }
 
     }
 
@@ -49,31 +55,40 @@ class Restaurant extends Component {
     handleDataRetrieval = function(data) {
         if (process.env.NODE_ENV != "production") { // development
 
-            this.props.setSpreadsheetData(
-                data[client_data.template.section_indexing.restaurant_home],
-                data[client_data.template.section_indexing.restaurant_hours],
-                data[client_data.template.section_indexing.breakfast_specials],
-                data[client_data.template.section_indexing.breakfast_items],
-                data[client_data.template.section_indexing.lunch_specials],
-                data[client_data.template.section_indexing.lunch_items],
-                data[client_data.template.section_indexing.dinner_specials],
-                data[client_data.template.section_indexing.dinner_items],
-                data[client_data.template.section_indexing.dessert],
-            )
+            // console.log('\n\nraw data\n',data)
+            //
+            // const raw_data = {}
+            // for ( var x = 0; x < data.length; x++) {
+            //     console.log('raw data\t',x,' = ',data[x])
+            // }
+
+            // this.props.setSpreadsheetData(
+            //     data[client_data.template.section_indexing.restaurant_home],
+            //     data[client_data.template.section_indexing.restaurant_hours],
+            //     data[client_data.template.section_indexing.breakfast_specials],
+            //     data[client_data.template.section_indexing.breakfast_items],
+            //     data[client_data.template.section_indexing.lunch_specials],
+            //     data[client_data.template.section_indexing.lunch_items],
+            //     data[client_data.template.section_indexing.dinner_specials],
+            //     data[client_data.template.section_indexing.dinner_items],
+            //     data[client_data.template.section_indexing.dessert],
+            // )
+
+            this.props.setSpreadsheetDataNew(data)
         }
         else { // production
 
-            this.props.setSpreadsheetData(
-                data[client_data.client_00000.section_indexing.restaurant_home],
-                data[client_data.client_00000.section_indexing.restaurant_hours],
-                data[client_data.client_00000.section_indexing.breakfast_specials],
-                data[client_data.client_00000.section_indexing.breakfast_items],
-                data[client_data.client_00000.section_indexing.lunch_specials],
-                data[client_data.client_00000.section_indexing.lunch_items],
-                data[client_data.client_00000.section_indexing.dinner_specials],
-                data[client_data.client_00000.section_indexing.dinner_items],
-                data[client_data.client_00000.section_indexing.dessert],
-            )
+            // this.props.setSpreadsheetData(
+            //     data[client_data.client_00000.section_indexing.restaurant_home],
+            //     data[client_data.client_00000.section_indexing.restaurant_hours],
+            //     data[client_data.client_00000.section_indexing.breakfast_specials],
+            //     data[client_data.client_00000.section_indexing.breakfast_items],
+            //     data[client_data.client_00000.section_indexing.lunch_specials],
+            //     data[client_data.client_00000.section_indexing.lunch_items],
+            //     data[client_data.client_00000.section_indexing.dinner_specials],
+            //     data[client_data.client_00000.section_indexing.dinner_items],
+            //     data[client_data.client_00000.section_indexing.dessert],
+            // )
         }
     }
 
@@ -111,4 +126,4 @@ class Restaurant extends Component {
     }
 }
 
-export default Restaurant
+export default Menu

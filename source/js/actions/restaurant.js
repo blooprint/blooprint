@@ -12,6 +12,12 @@ export function setSpreadsheetData(restaurantInfo, restaurantHours, breakfastSpe
         dessert
     }
 }
+export function setSpreadsheetDataNew(data) {
+    return {
+        type: 'SET_SPREADSHEET_DATA_NEW',
+        data
+    }
+}
 export function action_viewBreakfast() {
     return {
         type: 'VIEW_BREAKFAST'

@@ -11,7 +11,9 @@ const initialState = {
 	lunchItems: [],
 	dinnerSpecials: [],
 	dinnerItems: [],
-	dessert: []
+	dessert: [],
+
+	menuHierarchy: {}
 }
 
 export default function restaurant(state = initialState, action) {
@@ -31,6 +33,38 @@ export default function restaurant(state = initialState, action) {
                 dinnerItems: action.dinnerItems,
                 dessert: action.dessert
             }
+
+		case 'SET_SPREADSHEET_DATA_NEW':
+
+			// // console.log('\n\nreducer\t',action.data)
+			// var toReturn = Object.assign({}, ...state)
+			// for(var x = 0; x < action.data.length; x++) {
+			// 	toReturn = Object.assign({}, toReturn, action.data[x])
+			// 	console.log('toReturn\t',toReturn)
+			// }
+			// console.log('FINAL toReturn\t',toReturn)
+
+			var menuArray = []
+			for ( var x = 0; x < action.data.length; x++){
+				menuArray.push(action.data[x])
+			}
+			console.log('FINAL toReturn\t',menuArray)
+
+			//	TODO: create menuHierarchy object in store
+
+
+			return {  // TODO: return only { ...state, menuHierarchy: menuArray }
+				...state,
+                restaurantInfo: action.data[0],
+                restaurantHours: action.data[1],
+                breakfastSpecials: action.data[2],
+                breakfastItems: action.data[3],
+                lunchSpecials: action.data[4],
+                lunchItems: action.data[5],
+                dinnerSpecials: action.data[6],
+                dinnerItems: action.data[7],
+                dessert: action.data[8]
+			}
 
 		case 'VIEW_BREAKFAST':
 			console.log('reducer working')

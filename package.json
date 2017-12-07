@@ -77,7 +77,7 @@
     "react-responsive": "^4.0.3",
     "react-responsive-audio-player": "^1.1.4",
     "react-router": "^4.1.1",
-    "react-router-dom": "^4.1.1",
+    "react-router-dom": "^4.2.2",
     "recharts": "^1.0.0-apha.5",
     "redux": "^3.6.0",
     "redux-logger": "^3.0.6",

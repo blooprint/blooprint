@@ -19,7 +19,7 @@ const ServerHtml = ({ appHtml, dehydratedState }) => (
         dangerouslySetInnerHTML={ { __html: appHtml } } // eslint-disable-line
       />
       <script
-        dangerouslySetInnerHTML={ { __html: `var __MARVIN_DEHYDRATED_STATE = ${ dehydratedState };` } } // eslint-disable-line
+        dangerouslySetInnerHTML={ { __html: `var _DEHYDRATED_STATE = ${ dehydratedState };` } } // eslint-disable-line
       />
       <script type='text/javascript' src={ `/${ outputFiles.vendor }` } />
       <script type='text/javascript' src={ `/${ outputFiles.client }` } />
