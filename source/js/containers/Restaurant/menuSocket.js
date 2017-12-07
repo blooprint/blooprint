@@ -1,16 +1,4 @@
-import restaurantKeys from '../../../assets/keys/restaurantKeys'
-
-const menuSections = [      //  as read from google document
-    'restaurant home',
-    'hours',
-    'breakfast specials',
-    'breakfast items',
-    'lunch specials',
-    'lunch items',
-    'dinner specials',
-    'dinner items',
-    'dessert'
-]
+import client_data from '../../../assets/restaurant/clients'
 
 export const menuSocket = (app) => {
 
@@ -31,17 +19,20 @@ export const menuSocket = (app) => {
 
             var gsjson = require('google-spreadsheet-to-json');
 
-            var spreadsheetID = ''
-            if (process.env.NODE_ENV != "production") {
-                spreadsheetID = restaurantKeys.template
+            var spreadsheet_document = ''
+            var all_menu_sections = ''
+            if (process.env.NODE_ENV != "production") { // development
+                spreadsheet_document = client_data.template.menu
+                all_menu_sections = client_data.template.sections
             }
-            else {
-                spreadsheetID = restaurantKeys.client_00000
+            else { // production
+                spreadsheet_document = client_data.client_00000.menu
+                all_menu_sections = client_data.client_00000.sections
             }
-            
+
             gsjson({
-                spreadsheetId: spreadsheetID,
-                worksheet: menuSections
+                spreadsheetId: spreadsheet_document,
+                worksheet: all_menu_sections
             })
             .then(function(data) {
                 socket.emit('mountMenuData', data)

@@ -4,20 +4,9 @@ import { emailConfigs } from '../../containers/Contact/emailConfigs'
 import RestaurantHome from './dumb/RestaurantHome'
 import MenuHome from './dumb/MenuHome'
 import Footer from '../Blooprint/dumb/Footer'
+import client_data from '../../../assets/restaurant/clients'
 
 import MediaQuery from 'react-responsive'
-
-const menuSections = {      // make sure to use index order in ./menuSocket
-    restaurantInfo: 0,
-    restaurantHours: 1,
-    breakfastSpecials: 2,
-    breakfastItems: 3,
-    lunchSpecials: 4,
-    lunchItems: 5,
-    dinnerSpecials: 6,
-    dinnerItems: 7,
-    dessert: 8,
-}
 
 class Restaurant extends Component {
 
@@ -38,25 +27,13 @@ class Restaurant extends Component {
     componentWillMount() {
         this.socket.emit('getMenuData')
         this.socket.on('mountMenuData', function(data) {
-
-            this.props.setSpreadsheetData(
-                data[menuSections.restaurantInfo],
-                data[menuSections.restaurantHours],
-                data[menuSections.breakfastSpecials],
-                data[menuSections.breakfastItems],
-                data[menuSections.lunchSpecials],
-                data[menuSections.lunchItems],
-                data[menuSections.dinnerSpecials],
-                data[menuSections.dinnerItems],
-                data[menuSections.dessert],
-            )
-
+            this.handleDataRetrieval(data)
         }.bind(this))
     }
 
     componentDidMount() {
 
-        this.handleBrowserTitleChange('NCFR')
+        this.handleBrowserTitleChange(client_data.template.browser_title)
 
     }
 
@@ -67,6 +44,37 @@ class Restaurant extends Component {
         link.rel = 'shortcut icon';
         link.href = '../../../assets/img/food.ico';
         document.getElementsByTagName('head')[0].appendChild(link);
+    }
+
+    handleDataRetrieval = function(data) {
+        if (process.env.NODE_ENV != "production") { // development
+
+            this.props.setSpreadsheetData(
+                data[client_data.template.section_indexing.restaurant_home],
+                data[client_data.template.section_indexing.restaurant_hours],
+                data[client_data.template.section_indexing.breakfast_specials],
+                data[client_data.template.section_indexing.breakfast_items],
+                data[client_data.template.section_indexing.lunch_specials],
+                data[client_data.template.section_indexing.lunch_items],
+                data[client_data.template.section_indexing.dinner_specials],
+                data[client_data.template.section_indexing.dinner_items],
+                data[client_data.template.section_indexing.dessert],
+            )
+        }
+        else { // production
+
+            this.props.setSpreadsheetData(
+                data[client_data.client_00000.section_indexing.restaurant_home],
+                data[client_data.client_00000.section_indexing.restaurant_hours],
+                data[client_data.client_00000.section_indexing.breakfast_specials],
+                data[client_data.client_00000.section_indexing.breakfast_items],
+                data[client_data.client_00000.section_indexing.lunch_specials],
+                data[client_data.client_00000.section_indexing.lunch_items],
+                data[client_data.client_00000.section_indexing.dinner_specials],
+                data[client_data.client_00000.section_indexing.dinner_items],
+                data[client_data.client_00000.section_indexing.dessert],
+            )
+        }
     }
 
     render () {
