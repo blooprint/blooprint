@@ -23,7 +23,7 @@ export const menuSocket = (app) => {
             var all_menu_sections = ''
             if (process.env.NODE_ENV != "production") { // development
                 spreadsheet_document = client_data.template.motherload
-                all_menu_sections = [0]
+                all_menu_sections = [0,1,2]
                 // spreadsheet_document = client_data.template.menu
                 // all_menu_sections = client_data.template.sections
             }

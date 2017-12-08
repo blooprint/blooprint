@@ -38,9 +38,13 @@ export default function restaurant(state = initialState, action) {
 
 		case 'SET_SPREADSHEET_DATA_NEW':
 
+		console.log('infi\n',action.data[0])
+
 			return {
 				...state,
-				menuHierarchy: generateMenuHierarchy(action.data[0])
+				restaurantInfo: action.data[0],
+                restaurantHours: action.data[1],
+                menuHierarchy: generateMenuHierarchy(action.data[2])
 			}
 
 		case 'VIEW_BREAKFAST':
