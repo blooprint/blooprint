@@ -38,8 +38,6 @@ export default function restaurant(state = initialState, action) {
 
 		case 'SET_SPREADSHEET_DATA_NEW':
 
-		console.log('infi\n',action.data[0])
-
 			return {
 				...state,
 				restaurantInfo: action.data[0],

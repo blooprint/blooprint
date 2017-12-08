@@ -56,7 +56,6 @@ const generateMenuHierarchy = function(data) {
         prevMenu = currentMenu
         prevSection = currentSection
     })
-    console.log('\n\nhierarchy\n', hierarchy)
     return hierarchy
 }
 

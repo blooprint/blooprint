@@ -8,7 +8,7 @@ const MenuHeader = (props) => {
         <div>
         <MediaQuery maxWidth={767}>
             <div>
-                <h1 className="menu_header" id="mobile_menu_header">{props.restaurantInfo.map((tableline) => {
+                <h1 className="menu_header" id="mobile_menu_header">{props.restaurant.restaurantInfo.map((tableline) => {
                     if( tableline.item == 'name' ) {
                         return (
                             <div onClick={() => {
@@ -30,7 +30,7 @@ const MenuHeader = (props) => {
 
         <MediaQuery minWidth={768} maxWidth={991}>
             <div>
-                <h1 className="menu_header" id="mobile_menu_header">{props.restaurantInfo.map((tableline) => {
+                <h1 className="menu_header" id="mobile_menu_header">{props.restaurant.restaurantInfo.map((tableline) => {
                     if( tableline.item == 'name' ) {
                         return (
                             <div onClick={() => {
@@ -52,7 +52,7 @@ const MenuHeader = (props) => {
 
         <MediaQuery minWidth={992}>
             <div>
-                <h1 className="menu_header">{props.restaurantInfo.map((tableline) => {
+                <h1 className="menu_header">{props.restaurant.restaurantInfo.map((tableline) => {
                     if( tableline.item == 'name' ) {
                         return (
                             <div onClick={() => {

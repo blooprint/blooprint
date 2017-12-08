@@ -80,19 +80,19 @@ class Menu extends Component {
             <div>
                 <MediaQuery maxWidth={767}>
                     <div id="mobile_restaurant">
-                        { restaurant.viewHome ? <RestaurantHome actions={this.props} restaurant={restaurant} restaurantInfo={restaurant.restaurantInfo} /> : <MenuHome actions={this.props} restaurant={restaurant} restaurantInfo={restaurant.restaurantInfo} /> }
+                        { restaurant.viewHome ? <RestaurantHome actions={this.props} restaurant={restaurant} /> : <MenuHome actions={this.props} restaurant={restaurant} /> }
                     </div>
                 </MediaQuery>
 
                 <MediaQuery minWidth={768} maxWidth={991}>
                     <div id="mobile_restaurant">
-                        { restaurant.viewHome ? <RestaurantHome actions={this.props} restaurant={restaurant} restaurantInfo={restaurant.restaurantInfo} /> : <MenuHome actions={this.props} restaurant={restaurant} restaurantInfo={restaurant.restaurantInfo} /> }
+                        { restaurant.viewHome ? <RestaurantHome actions={this.props} restaurant={restaurant} /> : <MenuHome actions={this.props} restaurant={restaurant} /> }
                     </div>
                 </MediaQuery>
 
                 <MediaQuery minWidth={992}>
                     <div id="restaurant">
-                        { restaurant.viewHome ? <RestaurantHome actions={this.props} restaurant={restaurant} restaurantInfo={restaurant.restaurantInfo} /> : <MenuHome actions={this.props} restaurant={restaurant} restaurantInfo={restaurant.restaurantInfo} /> }
+                        { restaurant.viewHome ? <RestaurantHome actions={this.props} restaurant={restaurant} /> : <MenuHome actions={this.props} restaurant={restaurant} /> }
                     </div>
                 </MediaQuery>
             </div>

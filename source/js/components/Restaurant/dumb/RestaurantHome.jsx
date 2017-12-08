@@ -12,13 +12,13 @@ import Footer from '../../Blooprint/dumb/Footer'
 const RestaurantHome = (props) => {
 
     var mapURL = ''
-    props.restaurantInfo.map((tableline) => {
+    props.restaurant.restaurantInfo.map((tableline) => {
         if( tableline.item == 'map' ) {
             mapURL = tableline.value
         }
     })
     var fbURL = ''
-    props.restaurantInfo.map((tableline) => {
+    props.restaurant.restaurantInfo.map((tableline) => {
         if( tableline.item == 'facebook' ) {
             fbURL = tableline.value
         }
@@ -29,7 +29,7 @@ const RestaurantHome = (props) => {
             <MediaQuery maxWidth={767}>
                 <div id="mobile_restaurant_home">
                     <h1 className="restaurant_home_item">WELCOME TO</h1>
-                    <h1 className="restaurant_home_item" id="restaurant_name">{props.restaurantInfo.map((tableline) => {
+                    <h1 className="restaurant_home_item" id="restaurant_name">{props.restaurant.restaurantInfo.map((tableline) => {
                         if( tableline.item == 'name' ) {
                             return (
                                 <div>
@@ -42,7 +42,7 @@ const RestaurantHome = (props) => {
                     <div className="nav_button" onClick={() => {props.actions.action_viewBreakfast()}}><p>view menu</p></div>
 
                     <div>
-                        <h4 id="schedule_header" className="schedule_container_item">{props.restaurantInfo.map((tableline) => {
+                        <h4 id="schedule_header" className="schedule_container_item">{props.restaurant.restaurantInfo.map((tableline) => {
                             if( tableline.item == 'slogan' ) {
                                 return (
                                     <div>
@@ -51,7 +51,7 @@ const RestaurantHome = (props) => {
                                 )
                             }
                         })}</h4>
-                        <h4 id="schedule_header" className="schedule_container_item">{props.restaurantInfo.map((tableline) => {
+                        <h4 id="schedule_header" className="schedule_container_item">{props.restaurant.restaurantInfo.map((tableline) => {
                             if( tableline.item == 'sub_slogan' ) {
                                 return (
                                     <div>
@@ -72,7 +72,7 @@ const RestaurantHome = (props) => {
             <MediaQuery minWidth={768} maxWidth={991}>
                 <div id="restaurant_home">
                     <h1 className="restaurant_home_item">WELCOME TO</h1>
-                    <h1 className="restaurant_home_item" id="restaurant_name">{props.restaurantInfo.map((tableline) => {
+                    <h1 className="restaurant_home_item" id="restaurant_name">{props.restaurant.restaurantInfo.map((tableline) => {
                         if( tableline.item == 'name' ) {
                             return (
                                 <div>
@@ -85,7 +85,7 @@ const RestaurantHome = (props) => {
                     <div className="nav_button" onClick={() => {props.actions.action_viewBreakfast()}}><p>view menu</p></div>
 
                     <div>
-                        <h4 id="schedule_header" className="schedule_container_item">{props.restaurantInfo.map((tableline) => {
+                        <h4 id="schedule_header" className="schedule_container_item">{props.restaurant.restaurantInfo.map((tableline) => {
                             if( tableline.item == 'slogan' ) {
                                 return (
                                     <div>
@@ -94,7 +94,7 @@ const RestaurantHome = (props) => {
                                 )
                             }
                         })}</h4>
-                        <h4 id="schedule_header" className="schedule_container_item">{props.restaurantInfo.map((tableline) => {
+                        <h4 id="schedule_header" className="schedule_container_item">{props.restaurant.restaurantInfo.map((tableline) => {
                             if( tableline.item == 'sub_slogan' ) {
                                 return (
                                     <div>
@@ -115,7 +115,7 @@ const RestaurantHome = (props) => {
             <MediaQuery minWidth={992}>
                 <div id="restaurant_home">
                     <h1 className="restaurant_home_item">WELCOME TO</h1>
-                    <h1 className="restaurant_home_item" id="restaurant_name">{props.restaurantInfo.map((tableline) => {
+                    <h1 className="restaurant_home_item" id="restaurant_name">{props.restaurant.restaurantInfo.map((tableline) => {
                         if( tableline.item == 'name' ) {
                             return (
                                 <div>
@@ -128,7 +128,7 @@ const RestaurantHome = (props) => {
                     <div className="nav_button" onClick={() => {props.actions.action_viewBreakfast()}}><p>view menu</p></div>
 
                     <div>
-                        <h4 id="schedule_header" className="schedule_container_item">{props.restaurantInfo.map((tableline) => {
+                        <h4 id="schedule_header" className="schedule_container_item">{props.restaurant.restaurantInfo.map((tableline) => {
                             if( tableline.item == 'slogan' ) {
                                 return (
                                     <div>
@@ -137,7 +137,7 @@ const RestaurantHome = (props) => {
                                 )
                             }
                         })}</h4>
-                        <h4 id="schedule_header" className="schedule_container_item">{props.restaurantInfo.map((tableline) => {
+                        <h4 id="schedule_header" className="schedule_container_item">{props.restaurant.restaurantInfo.map((tableline) => {
                             if( tableline.item == 'sub_slogan' ) {
                                 return (
                                     <div>

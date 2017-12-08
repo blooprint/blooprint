@@ -15,8 +15,7 @@ const MenuHome = (props) => {
             <MenuHeader
                 className="menu_block"
                 actions={props.actions}
-                restaurant={props.restaurant}
-                restaurantInfo={props.restaurantInfo} />
+                restaurant={props.restaurant} />
 
             <ViewSoretedMenuList restaurant={props.restaurant} />
             <Footer />
