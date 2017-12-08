@@ -2,8 +2,6 @@ import React from 'react'
 import MediaQuery from 'react-responsive'
 
 const Price = (props) => {
-    console.log('\n\ntypeof(props.price) = ',typeof(props.price))
-    console.log('props.price = ',props.price,'\n\n')
     return (
         <div id="mobile_menu_item_right" className="item_lr">
             <MediaQuery maxWidth={767}>
