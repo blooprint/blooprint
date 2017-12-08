@@ -5,8 +5,6 @@ const initialState = {
 	viewBreakfast: false,
 	viewLunchDinner: false,
 	viewDessert: false,
-	restaurantInfo: [],
-	restaurantHours: [],
 	breakfastSpecials: [],
 	breakfastItems: [],
 	lunchSpecials: [],
@@ -15,6 +13,8 @@ const initialState = {
 	dinnerItems: [],
 	dessert: [],
 
+	restaurantInfo: [],
+	restaurantHours: [],
 	menuHierarchy: []
 }
 

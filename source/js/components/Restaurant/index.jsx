@@ -26,8 +26,8 @@ class Menu extends Component {
 
     componentWillMount() {
         this.socket.emit('getMenuData')
-        this.socket.on('mountMenuData', function(data) {
-            this.handleDataRetrieval(data)
+        this.socket.on('mountMenuData', function(data, sheet) {
+            this.handleDataRetrieval(data, sheet)
         }.bind(this))
     }
 
@@ -52,9 +52,23 @@ class Menu extends Component {
         document.getElementsByTagName('head')[0].appendChild(link);
     }
 
-    handleDataRetrieval = function(data) {
+    handleDataRetrieval = function(data, whichSheet) {
         if (process.env.NODE_ENV != "production") { // development
-            this.props.setSpreadsheetDataNew(data)
+
+            if(whichSheet == 'motherload') this.props.setSpreadsheetDataNew(data)
+            else if(whichSheet == 'ncfr') {
+                this.props.setSpreadsheetData(
+                    data[client_data.template.section_indexing.restaurant_home],
+                    data[client_data.template.section_indexing.restaurant_hours],
+                    data[client_data.template.section_indexing.breakfast_specials],
+                    data[client_data.template.section_indexing.breakfast_items],
+                    data[client_data.template.section_indexing.lunch_specials],
+                    data[client_data.template.section_indexing.lunch_items],
+                    data[client_data.template.section_indexing.dinner_specials],
+                    data[client_data.template.section_indexing.dinner_items],
+                    data[client_data.template.section_indexing.dessert],
+                )
+            }
         }
         else { // production
 
@@ -74,25 +88,23 @@ class Menu extends Component {
 
     render () {
 
-        const { restaurant } = this.props
-
         return (
             <div>
                 <MediaQuery maxWidth={767}>
                     <div id="mobile_restaurant">
-                        { restaurant.viewHome ? <RestaurantHome actions={this.props} restaurant={restaurant} /> : <MenuHome actions={this.props} restaurant={restaurant} /> }
+                        { this.props.restaurant.viewHome ? <RestaurantHome {...this.props} /> : <MenuHome {...this.props} /> }
                     </div>
                 </MediaQuery>
 
                 <MediaQuery minWidth={768} maxWidth={991}>
                     <div id="mobile_restaurant">
-                        { restaurant.viewHome ? <RestaurantHome actions={this.props} restaurant={restaurant} /> : <MenuHome actions={this.props} restaurant={restaurant} /> }
+                        { this.props.restaurant.viewHome ? <RestaurantHome {...this.props} /> : <MenuHome {...this.props} /> }
                     </div>
                 </MediaQuery>
 
                 <MediaQuery minWidth={992}>
                     <div id="restaurant">
-                        { restaurant.viewHome ? <RestaurantHome actions={this.props} restaurant={restaurant} /> : <MenuHome actions={this.props} restaurant={restaurant} /> }
+                        { this.props.restaurant.viewHome ? <RestaurantHome {...this.props} /> : <MenuHome {...this.props} /> }
                     </div>
                 </MediaQuery>
             </div>

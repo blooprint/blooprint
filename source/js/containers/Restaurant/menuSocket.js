@@ -21,9 +21,23 @@ export const menuSocket = (app) => {
 
             var spreadsheet_document = ''
             var all_menu_sections = ''
+
+            var whichSheet = ''
+
             if (process.env.NODE_ENV != "production") { // development
-                spreadsheet_document = client_data.template.motherload
-                all_menu_sections = [0,1,2]
+
+                /* MOTHERLOAD */
+                // whichSheet = 'motherload'
+                // spreadsheet_document = client_data.template.motherload
+                // all_menu_sections = [0,1,2]
+
+                /* NCFR */
+                whichSheet = 'ncfr'
+                spreadsheet_document = client_data.template.ncfr
+                all_menu_sections = client_data.template.sections
+
+                // /* TEMPLATE */
+                // whichSheet = 'template'
                 // spreadsheet_document = client_data.template.menu
                 // all_menu_sections = client_data.template.sections
             }
@@ -37,7 +51,7 @@ export const menuSocket = (app) => {
                 worksheet: all_menu_sections
             })
             .then(function(data) {
-                socket.emit('mountMenuData', data)
+                socket.emit('mountMenuData', data, whichSheet)
             })
             .catch(function(err) {
                 console.log(err.message);

@@ -1,131 +1,137 @@
-import React from 'react'
+import React, { Component } from 'react'
 import MenuSection from './MenuSection'
 import MediaQuery from 'react-responsive'
 
-const ViewSoretedMenuList = (props) => {
+class ViewSoretedMenuList extends Component {
 
-    if(props.restaurant.viewDessert) {
-        return (
-            <div>
-                <MediaQuery maxWidth={767}>
-                    <div id="mobile_sortedMenuList">
-                        <MenuSection
-                            className="menu_block"
-                            list={props.restaurant.dessert} />
-                    </div>
-                </MediaQuery>
-
-                <MediaQuery minWidth={768} maxWidth={991}>
-                    <div id="sortedMenuList">
-                        <MenuSection
-                            className="menu_block"
-                            list={props.restaurant.dessert} />
-                    </div>
-                </MediaQuery>
-
-                <MediaQuery minWidth={992}>
-                    <div id="sortedMenuList">
-                        <MenuSection
-                            className="menu_block"
-                            list={props.restaurant.dessert} />
-                    </div>
-                </MediaQuery>
-            </div>
-        )
+    constructor(props) {
+        super(props)
     }
-    else if(props.restaurant.viewBreakfast) {
-        return (
-            <div>
-                <MediaQuery maxWidth={767}>
-                    <div id="mobile_sortedMenuList">
-                        <MenuSection
-                            className="menu_block"
-                            list={props.restaurant.breakfastSpecials} />
-                        <MenuSection
-                            className="menu_block"
-                            list={props.restaurant.breakfastItems} />
-                    </div>
-                </MediaQuery>
 
-                <MediaQuery minWidth={768} maxWidth={991}>
-                    <div id="sortedMenuList">
-                        <MenuSection
-                            className="menu_block"
-                            list={props.restaurant.breakfastSpecials} />
-                        <MenuSection
-                            className="menu_block"
-                            list={props.restaurant.breakfastItems} />
-                    </div>
-                </MediaQuery>
+    render() {
+        if(this.props.restaurant.viewDessert) {
+            return (
+                <div>
+                    <MediaQuery maxWidth={767}>
+                        <div id="mobile_sortedMenuList">
+                            <MenuSection
+                                className="menu_block"
+                                list={this.props.restaurant.dessert} />
+                        </div>
+                    </MediaQuery>
 
-                <MediaQuery minWidth={992}>
-                    <div id="sortedMenuList">
-                        <MenuSection
-                            className="menu_block"
-                            list={props.restaurant.breakfastSpecials} />
-                        <MenuSection
-                            className="menu_block"
-                            list={props.restaurant.breakfastItems} />
-                    </div>
-                </MediaQuery>
-            </div>
-        )
-    }
-    else if(props.restaurant.viewLunchDinner) {
-        return (
-            <div>
-                <MediaQuery maxWidth={767}>
-                    <div id="mobile_sortedMenuList">
-                        <MenuSection
-                            className="menu_block"
-                            list={props.restaurant.dinnerSpecials} />
-                        <MenuSection
-                            className="menu_block"
-                            list={props.restaurant.lunchSpecials} />
-                        <MenuSection
-                            className="menu_block"
-                            list={props.restaurant.dinnerItems} />
-                        <MenuSection
-                            className="menu_block"
-                            list={props.restaurant.lunchItems} />
-                    </div>
-                </MediaQuery>
+                    <MediaQuery minWidth={768} maxWidth={991}>
+                        <div id="sortedMenuList">
+                            <MenuSection
+                                className="menu_block"
+                                list={this.props.restaurant.dessert} />
+                        </div>
+                    </MediaQuery>
 
-                <MediaQuery minWidth={768} maxWidth={991}>
-                    <div id="sortedMenuList">
-                        <MenuSection
-                            className="menu_block"
-                            list={props.restaurant.dinnerSpecials} />
-                        <MenuSection
-                            className="menu_block"
-                            list={props.restaurant.lunchSpecials} />
-                        <MenuSection
-                            className="menu_block"
-                            list={props.restaurant.dinnerItems} />
-                        <MenuSection
-                            className="menu_block"
-                            list={props.restaurant.lunchItems} />
-                    </div>
-                </MediaQuery>
+                    <MediaQuery minWidth={992}>
+                        <div id="sortedMenuList">
+                            <MenuSection
+                                className="menu_block"
+                                list={this.props.restaurant.dessert} />
+                        </div>
+                    </MediaQuery>
+                </div>
+            )
+        }
+        else if(this.props.restaurant.viewBreakfast) {
+            return (
+                <div>
+                    <MediaQuery maxWidth={767}>
+                        <div id="mobile_sortedMenuList">
+                            <MenuSection
+                                className="menu_block"
+                                list={this.props.restaurant.breakfastSpecials} />
+                            <MenuSection
+                                className="menu_block"
+                                list={this.props.restaurant.breakfastItems} />
+                        </div>
+                    </MediaQuery>
 
-                <MediaQuery minWidth={992}>
-                    <div id="sortedMenuList">
-                        <MenuSection
-                            className="menu_block"
-                            list={props.restaurant.dinnerSpecials} />
-                        <MenuSection
-                            className="menu_block"
-                            list={props.restaurant.lunchSpecials} />
-                        <MenuSection
-                            className="menu_block"
-                            list={props.restaurant.dinnerItems} />
-                        <MenuSection
-                            className="menu_block"
-                            list={props.restaurant.lunchItems} />
-                    </div>
-                </MediaQuery>
-            </div>
-        )
+                    <MediaQuery minWidth={768} maxWidth={991}>
+                        <div id="sortedMenuList">
+                            <MenuSection
+                                className="menu_block"
+                                list={this.props.restaurant.breakfastSpecials} />
+                            <MenuSection
+                                className="menu_block"
+                                list={this.props.restaurant.breakfastItems} />
+                        </div>
+                    </MediaQuery>
+
+                    <MediaQuery minWidth={992}>
+                        <div id="sortedMenuList">
+                            <MenuSection
+                                className="menu_block"
+                                list={this.props.restaurant.breakfastSpecials} />
+                            <MenuSection
+                                className="menu_block"
+                                list={this.props.restaurant.breakfastItems} />
+                        </div>
+                    </MediaQuery>
+                </div>
+            )
+        }
+        else if(this.props.restaurant.viewLunchDinner) {
+            return (
+                <div>
+                    <MediaQuery maxWidth={767}>
+                        <div id="mobile_sortedMenuList">
+                            <MenuSection
+                                className="menu_block"
+                                list={this.props.restaurant.dinnerSpecials} />
+                            <MenuSection
+                                className="menu_block"
+                                list={this.props.restaurant.lunchSpecials} />
+                            <MenuSection
+                                className="menu_block"
+                                list={this.props.restaurant.dinnerItems} />
+                            <MenuSection
+                                className="menu_block"
+                                list={this.props.restaurant.lunchItems} />
+                        </div>
+                    </MediaQuery>
+
+                    <MediaQuery minWidth={768} maxWidth={991}>
+                        <div id="sortedMenuList">
+                            <MenuSection
+                                className="menu_block"
+                                list={this.props.restaurant.dinnerSpecials} />
+                            <MenuSection
+                                className="menu_block"
+                                list={this.props.restaurant.lunchSpecials} />
+                            <MenuSection
+                                className="menu_block"
+                                list={this.props.restaurant.dinnerItems} />
+                            <MenuSection
+                                className="menu_block"
+                                list={this.props.restaurant.lunchItems} />
+                        </div>
+                    </MediaQuery>
+
+                    <MediaQuery minWidth={992}>
+                        <div id="sortedMenuList">
+                            <MenuSection
+                                className="menu_block"
+                                list={this.props.restaurant.dinnerSpecials} />
+                            <MenuSection
+                                className="menu_block"
+                                list={this.props.restaurant.lunchSpecials} />
+                            <MenuSection
+                                className="menu_block"
+                                list={this.props.restaurant.dinnerItems} />
+                            <MenuSection
+                                className="menu_block"
+                                list={this.props.restaurant.lunchItems} />
+                        </div>
+                    </MediaQuery>
+                </div>
+            )
+        }
     }
 }
 
