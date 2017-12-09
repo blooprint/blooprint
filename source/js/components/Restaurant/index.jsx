@@ -14,9 +14,9 @@ class Menu extends Component {
         super(props)
 
         var io = require('socket.io-client')
-        if (process.env.NODE_ENV == "production") {
+        if (process.env.NODE_ENV === "production") {
             console.log('socket.io host server is PRODUCTION mode')
-            this.socket = io.connect('http://' + emailConfigs.blooprint + ':1235')
+            this.socket = io.connect('http://localhost:1235')
         }
         else {
             console.log('socket.io host server is DEV mode')
@@ -32,15 +32,7 @@ class Menu extends Component {
     }
 
     componentDidMount() {
-
-
-        if (process.env.NODE_ENV != "production") { // development
-            this.handleBrowserTitleChange(client_data.template.browser_title)
-        }
-        else { // production
-            this.handleBrowserTitleChange(client_data.client_00000.browser_title)
-        }
-
+        this.handleBrowserTitleChange(client_data.template.browser_title)
     }
 
     handleBrowserTitleChange = function(title) {
@@ -52,38 +44,8 @@ class Menu extends Component {
         document.getElementsByTagName('head')[0].appendChild(link);
     }
 
-    handleDataRetrieval = function(data, whichSheet) {
-        if (process.env.NODE_ENV != "production") { // development
-
-            if(whichSheet == 'motherload') this.props.setSpreadsheetDataNew(data)
-            else if(whichSheet == 'ncfr') {
-                this.props.setSpreadsheetData(
-                    data[client_data.template.section_indexing.restaurant_home],
-                    data[client_data.template.section_indexing.restaurant_hours],
-                    data[client_data.template.section_indexing.breakfast_specials],
-                    data[client_data.template.section_indexing.breakfast_items],
-                    data[client_data.template.section_indexing.lunch_specials],
-                    data[client_data.template.section_indexing.lunch_items],
-                    data[client_data.template.section_indexing.dinner_specials],
-                    data[client_data.template.section_indexing.dinner_items],
-                    data[client_data.template.section_indexing.dessert],
-                )
-            }
-        }
-        else { // production
-
-            // this.props.setSpreadsheetData(
-            //     data[client_data.client_00000.section_indexing.restaurant_home],
-            //     data[client_data.client_00000.section_indexing.restaurant_hours],
-            //     data[client_data.client_00000.section_indexing.breakfast_specials],
-            //     data[client_data.client_00000.section_indexing.breakfast_items],
-            //     data[client_data.client_00000.section_indexing.lunch_specials],
-            //     data[client_data.client_00000.section_indexing.lunch_items],
-            //     data[client_data.client_00000.section_indexing.dinner_specials],
-            //     data[client_data.client_00000.section_indexing.dinner_items],
-            //     data[client_data.client_00000.section_indexing.dessert],
-            // )
-        }
+    handleDataRetrieval = function(data) {
+        this.props.setSpreadsheetDataNew(data)
     }
 
     render () {
