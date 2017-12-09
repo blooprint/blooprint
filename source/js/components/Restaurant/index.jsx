@@ -16,7 +16,7 @@ class Menu extends Component {
         var io = require('socket.io-client')
         if (process.env.NODE_ENV === "production") {
             console.log('socket.io host server is PRODUCTION mode')
-            this.socket = io.connect('http://localhost:1235')
+            this.socket = io.connect('http://'+emailConfigs.blooprint+':1235')
         }
         else {
             console.log('socket.io host server is DEV mode')
