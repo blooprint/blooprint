@@ -11,19 +11,18 @@ class MenuSection extends React.Component {
 
     render() {
 
-        console.log('MenuSection\n',this.props)
-
         return (
             <div>
-                <h2 className="section_header" onClick={() => console.log('clicked section button')}>{this.props.sectionTitle}</h2>
-
-                <ul id="mobile_menu_section">
-                    {this.props.list.map((item) => {
-                        return (
-                            <MenuItem item={item} key={item.id} />
-                        )
-                    })}
-                </ul>
+                <h2 className="section_header" onClick={() => this.props.setOpenedSectionIndex(this.props.sectionIndex)}>{this.props.sectionTitle}</h2>
+                <div>
+                    { (this.props.restaurant.openedSectionIndex == this.props.sectionIndex) && (!this.props.restaurant.freshLoaded) ? <ul id="mobile_menu_section">
+                        {this.props.list.map((item) => {
+                            return (
+                                <MenuItem item={item} key={item.id} />
+                            )
+                        })}
+                    </ul> : null }
+                </div>
             </div>
         )
 

@@ -43,3 +43,15 @@ export function action_viewHome() {
         type: 'VIEW_HOME'
     }
 }
+export function setOpenedMenu(index) {
+    return {
+        type: 'SET_OPENED_MENU',
+        index
+    }
+}
+export function setOpenedSectionIndex(index) {
+    return {
+        type: 'SET_OPENED_SECTION_INDEX',
+        index
+    }
+}

@@ -17,8 +17,8 @@ const initialState = {
 	restaurantInfo: [],
 	restaurantHours: [],
 	menus: [],
-	openedMenu: 0,
-	openedSection: 0,
+	openedMenuIndex: 0,
+	openedSectionIndex: 0,
 	freshLoaded: true
 }
 
@@ -99,6 +99,20 @@ export default function restaurant(state = initialState, action) {
 		        viewDessert: false,
 				viewDrinks: false
 		    }
+
+		case 'SET_OPENED_MENU':
+			return {
+				...state,
+				freshLoaded: true,
+				openedMenuIndex: action.index
+			}
+
+		case 'SET_OPENED_SECTION_INDEX':
+			return {
+				...state,
+				freshLoaded: false,
+				openedSectionIndex: action.index
+			}
 
 
 		default:

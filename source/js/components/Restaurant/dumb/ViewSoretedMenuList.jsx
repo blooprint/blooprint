@@ -15,7 +15,7 @@ class ViewSoretedMenuList extends Component {
         return (
             <div id="current_section_list">
                 {
-                    this.props.restaurant.menus[0].map((individualSectionArray, index) => {
+                    this.props.restaurant.menus[this.props.restaurant.openedMenuIndex].map((individualSectionArray, index) => {
                         const currentSection = individualSectionArray[0].section
                         return (
                             <div id="mobile_sortedMenuList">
@@ -23,7 +23,8 @@ class ViewSoretedMenuList extends Component {
                                     className="menu_block"
                                     sectionTitle={currentSection}
                                     sectionIndex={index}
-                                    list={individualSectionArray} />
+                                    list={individualSectionArray}
+                                    {...this.props} />
                             </div>
                         )
                     })
