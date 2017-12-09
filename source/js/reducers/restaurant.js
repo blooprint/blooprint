@@ -5,6 +5,7 @@ const initialState = {
 	viewBreakfast: false,
 	viewLunchDinner: false,
 	viewDessert: false,
+	viewDrinks: false,
 	breakfastSpecials: [],
 	breakfastItems: [],
 	lunchSpecials: [],
@@ -15,7 +16,10 @@ const initialState = {
 
 	restaurantInfo: [],
 	restaurantHours: [],
-	menuHierarchy: []
+	menus: [],
+	openedMenu: 0,
+	openedSection: 0,
+	freshLoaded: true
 }
 
 export default function restaurant(state = initialState, action) {
@@ -42,7 +46,7 @@ export default function restaurant(state = initialState, action) {
 				...state,
 				restaurantInfo: action.data[0],
                 restaurantHours: action.data[1],
-                menuHierarchy: generateMenuHierarchy(action.data[2])
+                menus: generateMenuHierarchy(action.data[2])
 			}
 
 		case 'VIEW_BREAKFAST':
@@ -52,7 +56,8 @@ export default function restaurant(state = initialState, action) {
 		        viewBreakfast: true,
 		        viewHome: false,
 		        viewLunchDinner: false,
-		        viewDessert: false
+		        viewDessert: false,
+				viewDrinks: false
 		    }
 
 		case 'VIEW_LUNCH_DINNER':
@@ -61,7 +66,8 @@ export default function restaurant(state = initialState, action) {
 		        viewBreakfast: false,
 		        viewHome: false,
 		        viewLunchDinner: true,
-		        viewDessert: false
+		        viewDessert: false,
+				viewDrinks: false
 		    }
 
 		case 'VIEW_DESSERT':
@@ -70,7 +76,18 @@ export default function restaurant(state = initialState, action) {
 		        viewBreakfast: false,
 		        viewHome: false,
 		        viewLunchDinner: false,
-		        viewDessert: true
+		        viewDessert: true,
+				viewDrinks: false
+		    }
+
+		case 'VIEW_DRINKS':
+			return {
+		        ...state,
+		        viewBreakfast: false,
+		        viewHome: false,
+		        viewLunchDinner: false,
+		        viewDessert: true,
+				viewDrinks: true
 		    }
 
 		case 'VIEW_HOME':
@@ -79,7 +96,8 @@ export default function restaurant(state = initialState, action) {
 		        viewBreakfast: false,
 		        viewHome: true,
 		        viewLunchDinner: false,
-		        viewDessert: false
+		        viewDessert: false,
+				viewDrinks: false
 		    }
 
 

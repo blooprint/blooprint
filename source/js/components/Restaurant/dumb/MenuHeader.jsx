@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import MediaQuery from 'react-responsive'
+import MenuButtons from './MenuButtons'
 
 class MenuHeader extends Component {
 
@@ -26,11 +27,7 @@ class MenuHeader extends Component {
                         }
                     })}</h1>
 
-                    <div id="mobile_menu_buttons">
-                        <div id="button_breakfast" className="mobile_menu_button" onClick={() => {this.props.action_viewBreakfast()}}><p>break</p></div>
-                        <div id="button_lunch_dinner" className="mobile_menu_button" onClick={() => {this.props.action_viewLunchDinner()}}><p>lun | din</p></div>
-                        <div id="button_dessert" className="mobile_menu_button" onClick={() => {this.props.action_viewDessert()}}><p>dessert</p></div>
-                    </div>
+                <MenuButtons {...this.props} />
                 </div>
             </MediaQuery>
 
@@ -48,11 +45,8 @@ class MenuHeader extends Component {
                         }
                     })}</h1>
 
-                    <div id="mobile_menu_buttons">
-                        <div id="button_breakfast" className="mobile_menu_button" onClick={() => {this.props.action_viewBreakfast()}}><p>breakfast</p></div>
-                        <div id="button_lunch_dinner" className="mobile_menu_button" onClick={() => {this.props.action_viewLunchDinner()}}><p>lunch | dinner</p></div>
-                        <div id="button_dessert" className="mobile_menu_button" onClick={() => {this.props.action_viewDessert()}}><p>dessert</p></div>
-                    </div>
+                    <MenuButtons {...this.props} />
+
                 </div>
             </MediaQuery>
 
@@ -70,11 +64,8 @@ class MenuHeader extends Component {
                         }
                     })}</h1>
 
-                    <div id="menu_buttons">
-                        <div id="button_breakfast" className="menu_button" onClick={() => {this.props.action_viewBreakfast()}}><p>breakfast</p></div>
-                        <div id="button_lunch_dinner" className="menu_button" onClick={() => {this.props.action_viewLunchDinner()}}><p>lunch | dinner</p></div>
-                        <div id="button_dessert" className="menu_button" onClick={() => {this.props.action_viewDessert()}}><p>dessert</p></div>
-                    </div>
+                    <MenuButtons {...this.props} />
+
                 </div>
             </MediaQuery>
             </div>

@@ -33,6 +33,11 @@ export function action_viewDessert() {
         type: 'VIEW_DESSERT'
     }
 }
+export function action_viewDrinks() {
+    return {
+        type: 'VIEW_DRINKS'
+    }
+}
 export function action_viewHome() {
     return {
         type: 'VIEW_HOME'

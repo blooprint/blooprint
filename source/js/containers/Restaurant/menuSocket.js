@@ -27,14 +27,14 @@ export const menuSocket = (app) => {
             if (process.env.NODE_ENV != "production") { // development
 
                 /* MOTHERLOAD */
-                // whichSheet = 'motherload'
-                // spreadsheet_document = client_data.template.motherload
-                // all_menu_sections = [0,1,2]
+                whichSheet = 'motherload'
+                spreadsheet_document = client_data.template.motherload
+                all_menu_sections = [0,1,2]
 
-                /* NCFR */
-                whichSheet = 'ncfr'
-                spreadsheet_document = client_data.template.ncfr
-                all_menu_sections = client_data.template.sections
+                // /* NCFR */
+                // whichSheet = 'ncfr'
+                // spreadsheet_document = client_data.template.ncfr
+                // all_menu_sections = client_data.template.sections
 
                 // /* TEMPLATE */
                 // whichSheet = 'template'
