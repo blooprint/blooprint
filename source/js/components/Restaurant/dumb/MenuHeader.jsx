@@ -27,7 +27,6 @@ class MenuHeader extends Component {
                         }
                     })}</h1>
 
-                <MenuButtons {...this.props} />
                 </div>
             </MediaQuery>
 
