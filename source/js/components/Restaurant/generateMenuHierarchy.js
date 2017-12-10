@@ -16,15 +16,12 @@
 *   Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301  USA
 */
 const generateMenuHierarchy = function(data) {
-
-    var currentSectionArray = []
-    var currentMenuArray = []
+    var currentSectionItemsArray = []
+    var currentMenuSectionsArray = []
     var hierarchy = []
-
     var prevMenu = ''
     var prevSection = ''
-
-    const appendCurrentSectionArray = (tableline) => {
+    const appendcurrentSectionItemsArray = (tableline) => {
         var item = {
             menu: tableline.menu,
             section: tableline.section,
@@ -32,31 +29,39 @@ const generateMenuHierarchy = function(data) {
             itemsubtext: tableline.itemsubtext,
             price: tableline.price
         }
-        currentSectionArray.push(item)
+        currentSectionItemsArray.push(item)
     }
-
-    data.map((tableline) => {
-
+    data.map((tableline, index) => {
         var currentMenu = tableline.menu
         var currentSection = tableline.section
-
-        if(currentSection !== prevSection) {
-            if(currentSectionArray.length != 0) currentMenuArray.push(currentSectionArray)
-            currentSectionArray = []
-            appendCurrentSectionArray(tableline)
-
-            if(currentMenu !== prevMenu) {
-                if(currentMenuArray.length != 0) hierarchy.push(currentMenuArray)
-                currentMenuArray = []
-            }
+        if(data[index+1] === undefined) {
+            appendcurrentSectionItemsArray(tableline)
+            currentMenuSectionsArray.push(currentSectionItemsArray)
+            hierarchy.push(currentMenuSectionsArray)
         }
         else {
-            appendCurrentSectionArray(tableline)
+            if(currentSection == prevSection) {
+                appendcurrentSectionItemsArray(tableline)
+            }
+            else {
+                if(index == 0) {
+                    appendcurrentSectionItemsArray(tableline)
+                }
+                else {
+                    currentMenuSectionsArray.push(currentSectionItemsArray)
+                    currentSectionItemsArray = []
+                    appendcurrentSectionItemsArray(tableline)
+
+                    if(currentMenu != prevMenu){
+                        hierarchy.push(currentMenuSectionsArray)
+                        currentMenuSectionsArray = []
+                    }
+                }
+            }
         }
         prevMenu = currentMenu
         prevSection = currentSection
     })
     return hierarchy
 }
-
 export default generateMenuHierarchy
