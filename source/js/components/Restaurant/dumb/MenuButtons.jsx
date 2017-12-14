@@ -26,6 +26,10 @@ class MenuButtons extends Component {
         }
     }
 
+    setBrowsingWindowPosition() {
+        window.scrollTo(0, 0)
+    }
+
     render() {
         const buttonsArray = this.props.restaurant.menus.filter(this.ifLowerButton)
         return (
@@ -34,7 +38,10 @@ class MenuButtons extends Component {
                     buttonsArray.map((menuObject, index) => {
                         const currentMenu = menuObject[0][0].menu
                         return (
-                            <div id="button_breakfast" className="mobile_menu_button" onClick={() => this.props.setOpenedMenu(this.menuIndexArray[index])} >
+                            <div id="button_breakfast" className="mobile_menu_button" onClick={() => {
+                                    this.props.setOpenedMenu(this.menuIndexArray[index])
+                                    this.setBrowsingWindowPosition()
+                                }} >
                                 <p>{currentMenu}</p>
                             </div>
                         )

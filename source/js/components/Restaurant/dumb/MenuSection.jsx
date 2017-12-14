@@ -9,11 +9,22 @@ class MenuSection extends React.Component {
         super(props)
     }
 
+    setBrowsingWindowPosition() {
+        window.scrollTo(0, 0)
+        var clickedItem = document.querySelectorAll('.section_header')[this.props.sectionIndex]
+        var domRect = clickedItem.getBoundingClientRect()
+        console.log('yPos\n',domRect.y)
+        window.scrollTo(0, domRect.y)
+    }
+
     render() {
 
         return (
             <div>
-                <h2 className="section_header" onClick={() => this.props.setOpenedSectionIndex(this.props.sectionIndex)}>{this.props.sectionTitle}</h2>
+                <h2 className="section_header" id="mobile_opened_section" onClick={() => {
+                        this.props.setOpenedSectionIndex(this.props.sectionIndex)
+                        this.setBrowsingWindowPosition()
+                    }}>{this.props.sectionTitle}</h2>
                 <div>
                     { (this.props.restaurant.openedSectionIndex == this.props.sectionIndex) && (!this.props.restaurant.freshLoaded) ? <ul id="mobile_menu_section">
                         {this.props.list.map((item) => {
