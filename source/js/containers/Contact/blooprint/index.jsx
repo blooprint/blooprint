@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import WelcomeMat from '../WelcomeMat'
-import { emailConfigs } from './emailConfigs'
+import { emailConfigs } from '../emailConfigs'
 
 var io = require('socket.io-client')
 
@@ -33,16 +32,18 @@ class Form extends Component {
     render() {
 
         return (
-            <div id="form" className="center_item">
+            <div className="blooprint_center_item">
+
+                Contact Us:
                 <input
-                    className="form_item"
+                    className="blooprint_form_item"
                     placeholder="your email address"
                     id="email"
                     type="text"
                     ref={(input) => this.email = input} />
                 <textarea
-                    className="form_item"
-                    placeholder="hello, stranger"
+                    className="blooprint_form_item"
+                    placeholder="your message here"
                     id="message"
                     type="text"
                     ref={(input) => this.message = input} />
@@ -59,13 +60,11 @@ class Form extends Component {
     }
 }
 
-class Contact extends Component {
+class ContactBlooprint extends Component {
 
     render() {
         return(
             <div className='body'>
-
-                <WelcomeMat />
 
                 <div id="center_content">
                     <Form />
@@ -76,4 +75,4 @@ class Contact extends Component {
     }
 }
 
-export default Contact
+export default ContactBlooprint

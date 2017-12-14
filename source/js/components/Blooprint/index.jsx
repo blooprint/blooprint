@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom'
+import ContactBlooprint from '../../Containers/Contact/blooprint'
 
 var blooprintImage = require('../../../assets/img/blooprint.jpg')
 
@@ -38,6 +39,9 @@ class Blooprint extends Component {
 
                 <Link to={'/menu'}><div className="project_button" id="restaurant_button"><p>menu software</p></div></Link>
 
+                <div id="blooprint_center_content">
+                    <ContactBlooprint />
+                </div>
             </div>
 
         );
