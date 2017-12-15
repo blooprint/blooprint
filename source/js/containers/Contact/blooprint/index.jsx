@@ -10,7 +10,7 @@ class Form extends Component {
 
         if (process.env.NODE_ENV == "production") {
             console.log('socket.io host server is PRODUCTION mode')
-            this.socket = io.connect('http://' + emailConfigs.ipv4_address + ':1234')
+            this.socket = io.connect('http://' + emailConfigs.blooprint + ':1234')
         }
         else {
             console.log('socket.io host server is DEV mode')

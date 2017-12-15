@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom'
-import ContactBlooprint from '../../Containers/Contact/blooprint'
+import ContactBlooprint from '../../containers/Contact/blooprint'
 
 var blooprintImage = require('../../../assets/img/blooprint.jpg')
 
