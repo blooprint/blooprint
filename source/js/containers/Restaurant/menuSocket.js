@@ -1,4 +1,5 @@
 import client_data from '../../../assets/restaurant/clients'
+var gsjson = require('google-spreadsheet-to-json');
 
 export const menuSocket = (app) => {
 
@@ -13,35 +14,38 @@ export const menuSocket = (app) => {
 
     io.sockets.on('connection', function (socket) {
 
-        socket.on('getMenuData', function() {
+        socket.on('getMenuData', function(paramName) {
 
-            console.log('\nreceiving NCFR menu data from spreadsheet')
-
-            var gsjson = require('google-spreadsheet-to-json');
-
-            var spreadsheet_document = ''
-            var all_menu_sections = ''
-            var whichSheet = ''
-
-            if (process.env.NODE_ENV === 'production') { // development
-                /* MOTHERLOAD */
-                whichSheet = 'motherload'
-                spreadsheet_document = client_data.template.motherload
-                all_menu_sections = [0,1,2]
-            }
-            else { // production
-                /* MOTHERLOAD */
-                whichSheet = 'motherload'
-                spreadsheet_document = client_data.template.motherload
-                all_menu_sections = [0,1,2]
-            }
+            // grab from single list
+            var spreadsheet_document = client_data.client_list
+            var all_menu_sections = [0]
 
             gsjson({
                 spreadsheetId: spreadsheet_document,
                 worksheet: all_menu_sections
             })
             .then(function(data) {
-                socket.emit('mountMenuData', data, whichSheet)
+
+                data[0].map((lineitem, index) => {
+
+                    if(lineitem.name === paramName) {
+                        spreadsheet_document = lineitem.sheet_id
+                        all_menu_sections = [0,1,2]
+
+                        gsjson({
+                            spreadsheetId: spreadsheet_document,
+                            worksheet: all_menu_sections
+                        })
+                        .then(function(data) {
+                            console.log('\n\nsome')
+                            socket.emit('mountMenuData', data)
+                        })
+                        .catch(function(err) {
+                            console.log(err.message);
+                            console.log(err.stack);
+                        });
+                    }
+                })
             })
             .catch(function(err) {
                 console.log(err.message);

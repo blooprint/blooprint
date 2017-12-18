@@ -22,12 +22,14 @@ class Menu extends Component {
             console.log('socket.io host server is DEV mode')
             this.socket = io.connect('http://localhost:1235')
         }
+
+        this.restaurantName = this.props.match.params.restaurant
     }
 
     componentWillMount() {
-        this.socket.emit('getMenuData')
-        this.socket.on('mountMenuData', function(data, sheet) {
-            this.handleDataRetrieval(data, sheet)
+        this.socket.emit('getMenuData', this.restaurantName)
+        this.socket.on('mountMenuData', function(data) {
+            this.handleDataRetrieval(data)
         }.bind(this))
     }
 
