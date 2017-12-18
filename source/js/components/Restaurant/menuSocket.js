@@ -42,7 +42,7 @@ export const menuSocket = (app) => {
                 data[0].map((lineitem, index) => {
                     if(lineitem.name === paramName) {
                         spreadsheet_document = lineitem.sheet_id
-                        all_menu_sections = [0,1,2]
+                        all_menu_sections = [1,2,3]
                         gsjson({
                             spreadsheetId: spreadsheet_document,
                             worksheet: all_menu_sections

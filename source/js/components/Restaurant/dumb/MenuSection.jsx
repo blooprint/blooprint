@@ -70,40 +70,6 @@ class MenuSection extends React.Component {
                 </MediaQuery>
             </div>
         )
-
-        // return (
-        //     <div>
-        //         <MediaQuery maxWidth={767}>
-        //             <ul id="mobile_menu_section">
-        //                 {this.props.list.map((item) => {
-        //                     return (
-        //                         <MenuItem item={item} key={item.id} />
-        //                     )
-        //                 })}
-        //             </ul>
-        //         </MediaQuery>
-        //
-        //         <MediaQuery minWidth={768} maxWidth={991}>
-        //             <ul id="menu_section">
-        //                 {this.props.list.map((item) => {
-        //                     return (
-        //                         <MenuItem item={item} key={item.id} />
-        //                     )
-        //                 })}
-        //             </ul>
-        //         </MediaQuery>
-        //
-        //         <MediaQuery minWidth={992}>
-        //             <ul id="menu_section">
-        //                 {this.props.list.map((item) => {
-        //                     return (
-        //                         <MenuItem item={item} key={item.id} />
-        //                     )
-        //                 })}
-        //             </ul>
-        //         </MediaQuery>
-        //     </div>
-        // )
     }
 }
 

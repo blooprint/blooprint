@@ -17,7 +17,7 @@
 #mobile_menu_header {
     width: 100%;
     margin-top: 0;
-    padding: 15px 0 15px 0;
+    padding: 20px 0 15px 0;
     background-color: gray;
     text-align: center;
     font-size: 28px;
@@ -25,7 +25,7 @@
 #tablet_menu_header {
     width: 100%;
     margin-top: 0;
-    padding: 15px 0 15px 0;
+    padding: 20px 0 15px 0;
     background-color: gray;
     text-align: center;
     font-size: 36px;
@@ -56,7 +56,7 @@
 	background-color: #7F0000;
 }
 .mobile_menu_button p {
-    margin-top: 15px;
+    margin-top: 17px;
     font-size: 18px;
 }
 #mobile_menu_section {
@@ -114,20 +114,22 @@
     margin-right: auto;
     max-width: 630px;
     border: 1px solid white;
-    padding-top: 13px;
+    padding-top: 20px;
     padding-bottom: 13px;
     text-align: center;
     margin-bottom: 15px;
     margin-top: 15px;
+    cursor: pointer;
 }
 .mobile_section_header {
     margin: 0;
     border: 1px solid white;
-    padding-top: 13px;
+    padding-top: 20px;
     padding-bottom: 13px;
     text-align: center;
     margin-bottom: 15px;
     margin-top: 15px;
+    cursor: pointer;
 }
 #menu_item_list {
     background-color: #000;
