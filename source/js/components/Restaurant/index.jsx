@@ -34,7 +34,7 @@ class Menu extends Component {
     }
 
     componentDidMount() {
-        this.handleBrowserTitleChange(client_data.template.browser_title)
+        this.handleBrowserTitleChange(client_data.template.browser_title) // TODO
     }
 
     handleBrowserTitleChange = function(title) {

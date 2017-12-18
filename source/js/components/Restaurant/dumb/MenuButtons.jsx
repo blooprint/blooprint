@@ -10,14 +10,14 @@ class MenuButtons extends Component {
 
     ifLowerButton = (value, index, array) => {
         if(this.props.topbottom == 'top') {
-            if((value[0][0].menu.includes('break')) || (value[0][0].menu.includes('lun')) || (value[0][0].menu.includes('din'))) {
+            if((value[0][0].menu.toLowerCase().includes('break')) || (value[0][0].menu.toLowerCase().includes('lun')) || (value[0][0].menu.toLowerCase().includes('din'))) {
                 this.menuIndexArray.push(index)
                 return true
             }
             return false
         }
         else if(this.props.topbottom == 'bottom') {
-            if((value[0][0].menu.includes('drink')) || (value[0][0].menu.includes('dess')) || (value[0][0].menu.includes('bev')) || (value[0][0].menu.includes('sweet'))) {
+            if((value[0][0].menu.toLowerCase().includes('drink')) || (value[0][0].menu.toLowerCase().includes('dess')) || (value[0][0].menu.toLowerCase().includes('bev')) || (value[0][0].menu.includes('sweet'))) {
                 this.menuIndexArray.push(index)
                 return true
             }
@@ -37,7 +37,7 @@ class MenuButtons extends Component {
                     buttonsArray.map((menuObject, index) => {
                         const currentMenu = menuObject[0][0].menu
                         return (
-                            <div id="button_breakfast" className="mobile_menu_button" onClick={() => {
+                            <div id="button_menu" className="mobile_menu_button" onClick={() => {
                                     this.props.setOpenedMenu(this.menuIndexArray[index])
                                     this.setBrowsingWindowPosition()
                                 }} >
