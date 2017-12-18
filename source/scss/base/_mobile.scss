@@ -22,6 +22,14 @@
     text-align: center;
     font-size: 28px;
 }
+#tablet_menu_header {
+    width: 100%;
+    margin-top: 0;
+    padding: 15px 0 15px 0;
+    background-color: gray;
+    text-align: center;
+    font-size: 36px;
+}
 #mobile_menu_buttons {
     max-width: 680px;
     width: 100%;
@@ -51,15 +59,14 @@
     margin-top: 15px;
     font-size: 18px;
 }
-#mobile_sortedMenuList {
-    margin-top: 30px;
-}
 #mobile_menu_section {
     list-style-type: none;
     margin: 0;
     margin-top:15px;
     padding: 0;
-    width: 100%;
+    max-width: 680px;
+    margin-left:auto;
+    margin-right: auto;
 }
 #mobile_menu_item {
     font-size: 18px;
@@ -102,8 +109,26 @@
     margin-top:15px;
 }
 .section_header {
+    margin: 0;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 680px;
     border: 1px solid white;
-    padding-top: 10px;
+    padding-top: 13px;
     padding-bottom: 13px;
     text-align: center;
+    margin-bottom: 15px;
+    margin-top: 15px;
+}
+.mobile_section_header {
+    margin: 0;
+    border: 1px solid white;
+    padding-top: 13px;
+    padding-bottom: 13px;
+    text-align: center;
+    margin-bottom: 15px;
+    margin-top: 15px;
+}
+#menu_item_list {
+    background-color: #000;
 }

@@ -35,7 +35,7 @@ class MenuHeader extends Component {
             <MediaQuery minWidth={768} maxWidth={991}>
                 <div>
                     <Link to={'/'+this.props.match.params.restaurant}>
-                        <h1 className="menu_header" id="mobile_menu_header">{this.props.restaurant.restaurantInfo.map((tableline) => {
+                        <h1 className="menu_header" id="tablet_menu_header">{this.props.restaurant.restaurantInfo.map((tableline) => {
                             if( tableline.item == 'name' ) {
                                 return (
                                     <div className="link" onClick={() => {

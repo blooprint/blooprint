@@ -42,6 +42,9 @@
 .menu_block {
     display: block;
 }
+.mobile_menu_block {
+    display: block;
+}
 #menu_item {
     font-size: 18px;
     font-family: Arial;
@@ -50,7 +53,12 @@
     margin: 5px;
 }
 #sortedMenuList {
-    margin-top: 50px;
+    margin-top: 25px;
+    background-color: #1e1e1e;
+}
+#mobile_sortedMenuList {
+    margin-top: 15px;
+    background-color: #1e1e1e;
 }
 #menu_section {
     list-style-type: none;

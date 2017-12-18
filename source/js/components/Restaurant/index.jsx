@@ -47,7 +47,7 @@ class Menu extends Component {
     }
 
     handleDataRetrieval = function(data) {
-        this.props.setSpreadsheetDataNew(data)
+        this.props.setSpreadsheetData(data)
     }
 
     render () {

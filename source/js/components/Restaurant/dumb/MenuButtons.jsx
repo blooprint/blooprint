@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import MediaQuery from 'react-responsive'
-import MenuButton from './MenuButton'
 
 class MenuButtons extends Component {
 
