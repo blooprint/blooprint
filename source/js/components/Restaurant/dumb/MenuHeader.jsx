@@ -15,34 +15,38 @@ class MenuHeader extends Component {
             <div>
             <MediaQuery maxWidth={767}>
                 <div>
-                    <h1 className="menu_header" id="mobile_menu_header">{this.props.restaurant.restaurantInfo.map((tableline) => {
-                        if( tableline.item == 'name' ) {
-                            return (
-                                <div onClick={() => {
-                                        this.props.action_viewHome()
-                                    }}>
-                                    {tableline.value}
-                                </div>
-                            )
-                        }
-                    })}</h1>
+                    <Link to={'/'+this.props.match.params.restaurant}>
+                        <h1 className="menu_header" id="mobile_menu_header">{this.props.restaurant.restaurantInfo.map((tableline) => {
+                            if( tableline.item == 'name' ) {
+                                return (
+                                    <div className="link" onClick={() => {
+                                            this.props.action_viewHome()
+                                        }}>
+                                        {tableline.value}
+                                    </div>
+                                )
+                            }
+                        })}</h1>
+                    </Link>
 
                 </div>
             </MediaQuery>
 
             <MediaQuery minWidth={768} maxWidth={991}>
                 <div>
-                    <h1 className="menu_header" id="mobile_menu_header">{this.props.restaurant.restaurantInfo.map((tableline) => {
-                        if( tableline.item == 'name' ) {
-                            return (
-                                <div onClick={() => {
-                                        this.props.action_viewHome()
-                                    }}>
-                                    {tableline.value}
-                                </div>
-                            )
-                        }
-                    })}</h1>
+                    <Link to={'/'+this.props.match.params.restaurant}>
+                        <h1 className="menu_header" id="mobile_menu_header">{this.props.restaurant.restaurantInfo.map((tableline) => {
+                            if( tableline.item == 'name' ) {
+                                return (
+                                    <div className="link" onClick={() => {
+                                            this.props.action_viewHome()
+                                        }}>
+                                        {tableline.value}
+                                    </div>
+                                )
+                            }
+                        })}</h1>
+                    </Link>
 
                     <MenuButtons {...this.props} />
 
@@ -51,17 +55,19 @@ class MenuHeader extends Component {
 
             <MediaQuery minWidth={992}>
                 <div>
-                    <h1 className="menu_header">{this.props.restaurant.restaurantInfo.map((tableline) => {
-                        if( tableline.item == 'name' ) {
-                            return (
-                                <div onClick={() => {
-                                        this.props.action_viewHome()
-                                    }}>
-                                    {tableline.value}
-                                </div>
-                            )
-                        }
-                    })}</h1>
+                    <Link to={'/'+this.props.match.params.restaurant}>
+                        <h1 className="menu_header">{this.props.restaurant.restaurantInfo.map((tableline) => {
+                            if( tableline.item == 'name' ) {
+                                return (
+                                    <div className="link" onClick={() => {
+                                            this.props.action_viewHome()
+                                        }}>
+                                        {tableline.value}
+                                    </div>
+                                )
+                            }
+                        })}</h1>
+                    </Link>
 
                     <MenuButtons {...this.props} />
 

@@ -56,19 +56,19 @@ class Menu extends Component {
             <div>
                 <MediaQuery maxWidth={767}>
                     <div id="mobile_restaurant">
-                        { this.props.restaurant.viewHome ? <RestaurantHome {...this.props} /> : <MenuHome {...this.props} /> }
+                        { this.props.location.pathname.includes('/menu') ? <MenuHome {...this.props} /> : <RestaurantHome {...this.props} /> }
                     </div>
                 </MediaQuery>
 
                 <MediaQuery minWidth={768} maxWidth={991}>
                     <div id="mobile_restaurant">
-                        { this.props.restaurant.viewHome ? <RestaurantHome {...this.props} /> : <MenuHome {...this.props} /> }
+                        { this.props.location.pathname.includes('/menu') ? <MenuHome {...this.props} /> : <RestaurantHome {...this.props} /> }
                     </div>
                 </MediaQuery>
 
                 <MediaQuery minWidth={992}>
                     <div id="restaurant">
-                        { this.props.restaurant.viewHome ? <RestaurantHome {...this.props} /> : <MenuHome {...this.props} /> }
+                        { this.props.location.pathname.includes('/menu') ? <MenuHome {...this.props} /> : <RestaurantHome {...this.props} /> }
                     </div>
                 </MediaQuery>
             </div>

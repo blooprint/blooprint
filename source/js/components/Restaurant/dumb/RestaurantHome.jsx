@@ -44,7 +44,7 @@ class RestaurantHome extends Component {
                             }
                         })}</h1>
 
-                        <div className="nav_button" onClick={() => {this.props.action_viewBreakfast()}}><p>view menu</p></div>
+                        <Link to={'/',this.props.match.params.restaurant+'/menu'}><div className="nav_button" onClick={() => {this.props.action_viewBreakfast()}}><p className="link">view menu</p></div></Link>
 
                         <div>
                             <h4 id="schedule_header" className="schedule_container_item">{this.props.restaurant.restaurantInfo.map((tableline) => {
@@ -87,7 +87,7 @@ class RestaurantHome extends Component {
                             }
                         })}</h1>
 
-                        <div className="nav_button" onClick={() => {this.props.action_viewBreakfast()}}><p>view menu</p></div>
+                        <Link to={'/',this.props.match.params.restaurant+'/menu'}><div className="nav_button" onClick={() => {this.props.action_viewBreakfast()}}><p className="link">view menu</p></div></Link>
 
                         <div>
                             <h4 id="schedule_header" className="schedule_container_item">{this.props.restaurant.restaurantInfo.map((tableline) => {
@@ -130,7 +130,7 @@ class RestaurantHome extends Component {
                             }
                         })}</h1>
 
-                        <div className="nav_button" onClick={() => {this.props.action_viewBreakfast()}}><p>view menu</p></div>
+                        <Link to={'/',this.props.match.params.restaurant+'/menu'}><div className="nav_button" onClick={() => {this.props.action_viewBreakfast()}}><p className="link">view menu</p></div></Link>
 
                         <div>
                             <h4 id="schedule_header" className="schedule_container_item">{this.props.restaurant.restaurantInfo.map((tableline) => {
