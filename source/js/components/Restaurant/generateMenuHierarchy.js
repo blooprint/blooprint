@@ -27,7 +27,8 @@ const generateMenuHierarchy = function(data) {
             section: tableline.section,
             itemtext: tableline.itemtext,
             itemsubtext: tableline.itemsubtext,
-            price: tableline.price
+            price: tableline.price,
+            sectioncomment: tableline.sectioncomment
         }
         currentSectionItemsArray.push(item)
     }

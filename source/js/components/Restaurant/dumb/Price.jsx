@@ -2,6 +2,12 @@ import React from 'react'
 import MediaQuery from 'react-responsive'
 
 const Price = (props) => {
+
+    if(isNaN(props.price)) {
+        return(
+            null
+        )
+    }
     return (
         <div id="mobile_menu_item_right" className="item_lr">
             <MediaQuery maxWidth={767}>
