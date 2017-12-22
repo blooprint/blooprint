@@ -1,5 +1,5 @@
 #restaurant_name {
-    color: orange;
+    color: #7F0000;
     padding-left: 20px;
     padding-right: 20px;
 }
@@ -12,21 +12,21 @@
     height: 100%;
     margin-top: 0;
     padding: 60px 0 15px 0;
-    background-color: gray;
+    background-color: green;
     text-align: center;
 }
 .menu_header {
     width: 100%;
     margin-top: 0;
     padding: 60px 0 15px 0;
-    background-color: gray;
+    background-color: green;
     text-align: center;
     cursor: pointer;
 }
 #restaurant {
     box-sizing: border-box;
-    border: 25px solid #ff8300;
-    border-top: 35px solid #ff8300;
+    border: 25px solid #7F0000;
+    border-top: 35px solid #7F0000;
     background-size: cover;
     background-color: black;
     color: white;

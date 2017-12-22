@@ -37,7 +37,7 @@ class Blooprint extends Component {
                     <img id="trademark" src={blooprintImage} alt="trademark" />
                 </div>
 
-                <Link to={'/menu_software'}><div className="project_button" id="restaurant_button"><p>menu software</p></div></Link>
+                <a href="http://www.blooprint.xyz/listed"><div className="project_button" id="restaurant_button"><p>menu software</p></div></a>
 
                 <div id="blooprint_center_content">
                     <ContactBlooprint />

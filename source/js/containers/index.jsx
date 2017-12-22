@@ -10,7 +10,6 @@ export default class App extends Component {
         <div className='App'>
             <Switch>
                 <Route exact path="/" component={Blooprint}/>
-                <Route path="/menu_software" component={Restaurant}/>
                 <Route path="/:restaurant" component={Restaurant}/>
                 <Route path="/:restaurant/menu" component={Restaurant}/>
             </Switch>
