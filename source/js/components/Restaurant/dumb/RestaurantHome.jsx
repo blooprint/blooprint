@@ -15,20 +15,6 @@ class RestaurantHome extends Component {
 
 
     render() {
-
-        var mapURL = ''
-        this.props.restaurant.restaurantInfo.map((tableline) => {
-            if( tableline.item == 'map' ) {
-                mapURL = tableline.value
-            }
-        })
-        var fbURL = ''
-        this.props.restaurant.restaurantInfo.map((tableline) => {
-            if( tableline.item == 'facebook' ) {
-                fbURL = tableline.value
-            }
-        })
-
         return (
             <div>
                 <MediaQuery maxWidth={767}>
@@ -44,7 +30,7 @@ class RestaurantHome extends Component {
                             }
                         })}</h1>
 
-                    <Link to={'/'+this.props.match.params.restaurant+'/menu'}><div className="nav_button"><p className="link">view menu</p></div></Link>
+                    <Link to={'/'+this.props.match.params.restaurant+'/menu'}><div className="nav_button"><p className="link">VIEW MENU</p></div></Link>
 
                         <div>
                             <h4 id="schedule_header" className="schedule_container_item">{this.props.restaurant.restaurantInfo.map((tableline) => {
@@ -70,7 +56,7 @@ class RestaurantHome extends Component {
                         </div>
                     </div>
 
-                    <RestaurantMedia mapURL={mapURL} fbURL={fbURL} />
+                    <RestaurantMedia {...this.props} />
                     <Footer />
                 </MediaQuery>
 
@@ -87,7 +73,7 @@ class RestaurantHome extends Component {
                             }
                         })}</h1>
 
-                        <Link to={'/'+this.props.match.params.restaurant+'/menu'}><div className="nav_button"><p className="link">view menu</p></div></Link>
+                    <Link to={'/'+this.props.match.params.restaurant+'/menu'}><div className="nav_button"><p className="link">VIEW MENU</p></div></Link>
 
                         <div>
                             <h4 id="schedule_header" className="schedule_container_item">{this.props.restaurant.restaurantInfo.map((tableline) => {
@@ -113,7 +99,7 @@ class RestaurantHome extends Component {
                         </div>
                     </div>
 
-                    <RestaurantMedia mapURL={mapURL} fbURL={fbURL} />
+                    <RestaurantMedia {...this.props} />
                     <Footer />
                 </MediaQuery>
 
@@ -130,7 +116,7 @@ class RestaurantHome extends Component {
                             }
                         })}</h1>
 
-                        <Link to={'/'+this.props.match.params.restaurant+'/menu'}><div className="nav_button"><p className="link">view menu</p></div></Link>
+                    <Link to={'/'+this.props.match.params.restaurant+'/menu'}><div className="nav_button"><p className="link">VIEW MENU</p></div></Link>
 
                         <div>
                             <h4 id="schedule_header" className="schedule_container_item">{this.props.restaurant.restaurantInfo.map((tableline) => {
@@ -156,7 +142,7 @@ class RestaurantHome extends Component {
                         </div>
                     </div>
 
-                    <RestaurantMedia mapURL={mapURL} fbURL={fbURL} />
+                    <RestaurantMedia {...this.props} />
                     <Footer />
                 </MediaQuery>
             </div>
