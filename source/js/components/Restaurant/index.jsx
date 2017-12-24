@@ -34,11 +34,11 @@ class Menu extends Component {
     }
 
     componentDidMount() {
-        this.handleBrowserTitleChange(client_data.template.browser_title) // TODO
+        this.handleBrowserTitleChange(this.props.match.params.restaurant) // TODO
     }
 
     handleBrowserTitleChange = function(title) {
-        document.title = title
+        document.title = title.toUpperCase()
         var link = document.querySelector("link[rel*='icon']") || document.createElement('link');
         link.type = 'image/x-icon';
         link.rel = 'shortcut icon';

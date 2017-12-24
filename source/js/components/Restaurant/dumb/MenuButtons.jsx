@@ -8,16 +8,16 @@ class MenuButtons extends Component {
         this.menuIndexArray = []
     }
 
-    ifLowerButton = (value, index, array) => {
+    isTopOrBottomButton = (value, index, array) => {
         if(this.props.topbottom == 'top') {
-            if((value[0][0].menu.toLowerCase().includes('break')) || (value[0][0].menu.toLowerCase().includes('lun')) || (value[0][0].menu.toLowerCase().includes('din'))) {
+            if((!value[0][0].menu.toLowerCase().includes('drink')) && (!value[0][0].menu.toLowerCase().includes('dess')) && (!value[0][0].menu.toLowerCase().includes('bever')) && (!value[0][0].menu.toLowerCase().includes('sweet'))) {
                 this.menuIndexArray.push(index)
                 return true
             }
             return false
         }
         else if(this.props.topbottom == 'bottom') {
-            if((value[0][0].menu.toLowerCase().includes('drink')) || (value[0][0].menu.toLowerCase().includes('dess')) || (value[0][0].menu.toLowerCase().includes('bev')) || (value[0][0].menu.includes('sweet'))) {
+            if((value[0][0].menu.toLowerCase().includes('drink')) || (value[0][0].menu.toLowerCase().includes('dess')) || (value[0][0].menu.toLowerCase().includes('bever')) || (value[0][0].menu.toLowerCase().includes('sweet'))) {
                 this.menuIndexArray.push(index)
                 return true
             }
@@ -30,20 +30,33 @@ class MenuButtons extends Component {
     }
 
     render() {
-        const buttonsArray = this.props.restaurant.menus.filter(this.ifLowerButton)
+        const buttonsArray = this.props.restaurant.menus.filter(this.isTopOrBottomButton)
         return (
             <div id="mobile_menu_buttons">
                 {
                     buttonsArray.map((menuObject, index) => {
                         const currentMenu = menuObject[0][0].menu
-                        return (
-                            <div id="button_menu" className="mobile_menu_button" onClick={() => {
-                                    this.props.setOpenedMenu(this.menuIndexArray[index])
-                                    this.setBrowsingWindowPosition()
-                                }} >
-                                <p>{currentMenu}</p>
-                            </div>
-                        )
+
+                        if((buttonsArray[index+1] == null) && (index%2 == 0)) {
+                            return (
+                                <div id="button_menu" className="button_menu_center" onClick={() => {
+                                        this.props.setOpenedMenu(this.menuIndexArray[index])
+                                        this.setBrowsingWindowPosition()
+                                    }} >
+                                    <p>{currentMenu}</p>
+                                </div>
+                            )
+                        }
+                        else {
+                            return (
+                                <div id="button_menu" className="mobile_menu_button" onClick={() => {
+                                        this.props.setOpenedMenu(this.menuIndexArray[index])
+                                        this.setBrowsingWindowPosition()
+                                    }} >
+                                    <p>{currentMenu}</p>
+                                </div>
+                            )
+                        }
                     })
                 }
             </div>
