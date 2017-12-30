@@ -2,12 +2,13 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom'
 import ContactBlooprint from '../../containers/Contact/blooprint'
 import Header from './dumb/Header'
+import Footer from './dumb/Footer'
 import { handleBrowserTitleChange } from '../../functions'
 
-class Blooprint extends Component {
+class Menus extends Component {
 
     componentDidMount() {
-        handleBrowserTitleChange('Blooprint', 'marker')
+        handleBrowserTitleChange('Menu Listings', 'food')
     }
 
     render() {
@@ -16,15 +17,14 @@ class Blooprint extends Component {
 
                 <Header />
 
-                <a href="http://www.blooprint.xyz/menus"><div className="project_button" id="restaurant_button"><p>menu software</p></div></a>
+                <h2 id="services">Menu Listing Software</h2>
 
-                <div id="blooprint_center_content">
-                    <ContactBlooprint />
-                </div>
+                <Footer />
+
             </div>
 
         );
     }
 }
 
-export default Blooprint
+export default Menus

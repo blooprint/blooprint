@@ -1,13 +1,12 @@
 import React, { Component } from 'react'
 import { emailConfigs } from '../../containers/Contact/emailConfigs'
-
 import RestaurantHome from './dumb/RestaurantHome'
 import MenuHome from './dumb/MenuHome'
 import Loading from './dumb/Loading'
 import Footer from '../Blooprint/dumb/Footer'
 import client_data from '../../../assets/restaurant/clients'
-
 import MediaQuery from 'react-responsive'
+import { handleBrowserTitleChange } from '../../functions'
 
 class Menu extends Component {
 
@@ -35,16 +34,7 @@ class Menu extends Component {
     }
 
     componentDidMount() {
-        this.handleBrowserTitleChange(this.props.match.params.restaurant) // TODO
-    }
-
-    handleBrowserTitleChange = function(title) {
-        document.title = title.toUpperCase()
-        var link = document.querySelector("link[rel*='icon']") || document.createElement('link');
-        link.type = 'image/x-icon';
-        link.rel = 'shortcut icon';
-        link.href = '../../../assets/img/food.ico';
-        document.getElementsByTagName('head')[0].appendChild(link);
+        handleBrowserTitleChange(this.props.match.params.restaurant, 'food') // TODO
     }
 
     handleDataRetrieval = function(data) {

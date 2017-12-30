@@ -1,5 +1,5 @@
 {
-  "name": "blooprint menus",
+  "name": "menus",
   "author": "Dave Daggett (david.g.daggett@gmail) <https://github.com/ddaaggeett>",
   "description": "menu listing software",
   "homepage": "https://github.com/blooprint/menus#readme",
@@ -12,7 +12,7 @@
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server",
-    "client:dev": "webpack-dashboard -t 'blooprrint' -- webpack-dev-server",
+    "client:dev": "webpack-dashboard -t 'blooprint' -- webpack-dev-server",
     "client:watch": "webpack",
     "client:build": "npm run clean && NODE_ENV=\"production\" webpack",
     "client:preview": "npm run clean && NODE_ENV=\"production\" webpack-dev-server",
