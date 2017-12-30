@@ -15,7 +15,7 @@ class MenuHeader extends Component {
             <div>
             <MediaQuery maxWidth={767}>
                 <div>
-                    <Link to={'/'+this.props.match.params.restaurant}>
+                    <Link to={'/listing/'+this.props.match.params.restaurant}>
                         <h1 className="menu_header" id="mobile_menu_header">{this.props.restaurant.restaurantInfo.map((tableline) => {
                             if( tableline.item == 'name' ) {
                                 return (
@@ -34,7 +34,7 @@ class MenuHeader extends Component {
 
             <MediaQuery minWidth={768} maxWidth={991}>
                 <div>
-                    <Link to={'/'+this.props.match.params.restaurant}>
+                    <Link to={'/listing/'+this.props.match.params.restaurant}>
                         <h1 className="menu_header" id="tablet_menu_header">{this.props.restaurant.restaurantInfo.map((tableline) => {
                             if( tableline.item == 'name' ) {
                                 return (
@@ -55,7 +55,7 @@ class MenuHeader extends Component {
 
             <MediaQuery minWidth={992}>
                 <div>
-                    <Link to={'/'+this.props.match.params.restaurant}>
+                    <Link to={'/listing/'+this.props.match.params.restaurant}>
                         <h1 className="menu_header">{this.props.restaurant.restaurantInfo.map((tableline) => {
                             if( tableline.item == 'name' ) {
                                 return (

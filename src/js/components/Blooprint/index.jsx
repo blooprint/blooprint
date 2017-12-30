@@ -16,7 +16,7 @@ class Blooprint extends Component {
 
                 <Header />
 
-                <a href="http://www.blooprint.xyz/menus"><div className="project_button" id="restaurant_button"><p>menu software</p></div></a>
+                <Link to={'/listing'}><div className="project_button" id="restaurant_button"><p>menu software</p></div></Link>
 
                 <div id="blooprint_center_content">
                     <ContactBlooprint />

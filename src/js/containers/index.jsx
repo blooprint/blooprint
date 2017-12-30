@@ -11,9 +11,9 @@ export default class App extends Component {
         <div className='App'>
             <Switch>
                 <Route exact path="/" component={Blooprint}/>
-                <Route path="/menus" component={Menus}/>
-                <Route path="/menus/:restaurant" component={Restaurant}/>
-                <Route path="/menus/:restaurant/menu" component={Restaurant}/>
+                <Route exact path="/listing" component={Menus}/>
+                <Route path="/listing/:restaurant" component={Restaurant}/>
+                <Route path="/listing/:restaurant/menu" component={Restaurant}/>
             </Switch>
         </div>
     );

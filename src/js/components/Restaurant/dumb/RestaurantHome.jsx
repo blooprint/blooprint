@@ -30,7 +30,7 @@ class RestaurantHome extends Component {
                             }
                         })}</h1>
 
-                    <Link to={'/'+this.props.match.params.restaurant+'/menu'}><div className="nav_button"><p className="link">VIEW MENU</p></div></Link>
+                    <Link to={'/listing/'+this.props.match.params.restaurant+'/menu'}><div className="nav_button"><p className="link">VIEW MENU</p></div></Link>
 
                         <div>
                             <h4 id="schedule_header" className="schedule_container_item">{this.props.restaurant.restaurantInfo.map((tableline) => {
@@ -73,7 +73,7 @@ class RestaurantHome extends Component {
                             }
                         })}</h1>
 
-                    <Link to={'/'+this.props.match.params.restaurant+'/menu'}><div className="nav_button"><p className="link">VIEW MENU</p></div></Link>
+                    <Link to={'/listing/'+this.props.match.params.restaurant+'/menu'}><div className="nav_button"><p className="link">VIEW MENU</p></div></Link>
 
                         <div>
                             <h4 id="schedule_header" className="schedule_container_item">{this.props.restaurant.restaurantInfo.map((tableline) => {
@@ -116,7 +116,7 @@ class RestaurantHome extends Component {
                             }
                         })}</h1>
 
-                    <Link to={'/'+this.props.match.params.restaurant+'/menu'}><div className="nav_button"><p className="link">VIEW MENU</p></div></Link>
+                    <Link to={'/listing/'+this.props.match.params.restaurant+'/menu'}><div className="nav_button"><p className="link">VIEW MENU</p></div></Link>
 
                         <div>
                             <h4 id="schedule_header" className="schedule_container_item">{this.props.restaurant.restaurantInfo.map((tableline) => {

@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom'
-import ContactBlooprint from '../../containers/Contact/blooprint'
 import Header from './dumb/Header'
 import Footer from './dumb/Footer'
 import { handleBrowserTitleChange } from '../../functions'
@@ -17,7 +16,7 @@ class Menus extends Component {
 
                 <Header />
 
-                <h2 id="services">Menu Listing Software</h2>
+                <h2 id="services">Menu Listing Services</h2>
 
                 <Footer />
 
