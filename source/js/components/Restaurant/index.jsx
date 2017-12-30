@@ -3,6 +3,7 @@ import { emailConfigs } from '../../containers/Contact/emailConfigs'
 
 import RestaurantHome from './dumb/RestaurantHome'
 import MenuHome from './dumb/MenuHome'
+import Loading from './dumb/Loading'
 import Footer from '../Blooprint/dumb/Footer'
 import client_data from '../../../assets/restaurant/clients'
 
@@ -52,6 +53,19 @@ class Menu extends Component {
 
     render () {
 
+        return (
+            <div>
+                { this.props.restaurant.menus.length == 0 ? <Loading /> : <MainContent {...this.props} /> }
+            </div>
+        )
+    }
+}
+
+class MainContent extends Component {
+    constructor(props) {
+        super(props)
+    }
+    render() {
         return (
             <div>
                 <MediaQuery maxWidth={767}>
