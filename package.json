@@ -1,18 +1,18 @@
 {
-  "name": "ddaaggeett",
+  "name": "blooprint menus",
   "author": "Dave Daggett (david.g.daggett@gmail) <https://github.com/ddaaggeett>",
-  "description": "website",
-  "homepage": "https://github.com/ddaaggeett/ddaaggeett#readme",
+  "description": "menu listing software",
+  "homepage": "https://github.com/blooprint/menus#readme",
   "bugs": {
-    "url": "https://github.com/ddaaggeett/ddaaggeett/issues"
+    "url": "https://github.com/blooprint/menus/issues"
   },
   "version": "0.0.1",
   "private": "false",
-  "license": "MIT",
+  "license": "GPL-3.0",
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server",
-    "client:dev": "webpack-dashboard -t 'Marvin' -- webpack-dev-server",
+    "client:dev": "webpack-dashboard -t 'blooprrint' -- webpack-dev-server",
     "client:watch": "webpack",
     "client:build": "npm run clean && NODE_ENV=\"production\" webpack",
     "client:preview": "npm run clean && NODE_ENV=\"production\" webpack-dev-server",
@@ -23,7 +23,7 @@
     "universal:dev": "concurrently --prefix \"[{name}]\" --names \"webpack-server,webpack-client,watch-server\" --kill-others \"npm run server:watch\" \"npm run client:watch\" \"npm run server:restart\"",
     "universal:build": "npm run client:build && npm run server:build",
     "clean": "rm -rf ./build",
-    "lint-hook": "eslint ./source/js ./webpack ./*.js -f table --ext .js --ext .jsx",
+    "lint-hook": "eslint ./src/js ./webpack ./*.js -f table --ext .js --ext .jsx",
     "lint": "npm run lint-hook --silent || true",
     "hook-add": "prepush install",
     "hook-remove": "prepush remove",

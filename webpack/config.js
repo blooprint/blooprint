@@ -5,10 +5,10 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const autoprefixer = require('autoprefixer');
 
 const paths = {
-  source: path.join(__dirname, '../source'),
-  javascript: path.join(__dirname, '../source/js'),
-  images: path.join(__dirname, '../source/assets/img'),
-  audio: path.join(__dirname, '../source/assets/audio'),
+  source: path.join(__dirname, '../src'),
+  javascript: path.join(__dirname, '../src/js'),
+  images: path.join(__dirname, '../src/assets/img'),
+  audio: path.join(__dirname, '../src/assets/audio'),
   build: path.join(__dirname, '../build'),
 };
 
