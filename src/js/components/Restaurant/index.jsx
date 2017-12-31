@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
-import { emailConfigs } from '../../containers/Contact/emailConfigs'
+import { emailConfigs } from '../../../../configs/emailConfigs'
 import RestaurantHome from './dumb/RestaurantHome'
 import MenuHome from './dumb/MenuHome'
 import Loading from './dumb/Loading'
 import Footer from '../Blooprint/dumb/Footer'
-import client_data from '../../../assets/restaurant/clients'
+import client_data from '../../../../configs/restaurant/clients'
 import MediaQuery from 'react-responsive'
 import { handleBrowserTitleChange } from '../../functions'
 

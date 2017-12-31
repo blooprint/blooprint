@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom'
-import ContactBlooprint from '../../containers/Contact/blooprint'
+import ContactBlooprint from '../../components/Blooprint/dumb/Contact'
 import Header from './dumb/Header'
 import { handleBrowserTitleChange } from '../../functions'
 

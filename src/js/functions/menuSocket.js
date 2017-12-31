@@ -15,7 +15,7 @@
 *   along with this program; if not, write to the Free Software Foundation,
 *   Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301  USA
 */
-import client_data from '../../../assets/restaurant/clients'
+import client_data from '../../../configs/restaurant/clients'
 var gsjson = require('google-spreadsheet-to-json');
 
 export const menuSocket = (app) => {

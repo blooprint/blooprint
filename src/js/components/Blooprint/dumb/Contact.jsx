@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { emailConfigs } from '../emailConfigs'
+import { emailConfigs } from '../../../../../configs/emailConfigs'
 
 var io = require('socket.io-client')
 

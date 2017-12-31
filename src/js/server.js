@@ -11,8 +11,8 @@ import configureStore from './config/store';
 import getServerHtml from './config/server-html';
 import App from './containers';
 
-import { socketIO_setup } from './containers/Contact/emailSocket'
-import { menuSocket } from './components/Restaurant/menuSocket.js'
+import { socketIO_setup } from './functions/emailSocket'
+import { menuSocket } from './functions/menuSocket.js'
 
 // Load SCSS
 import '../scss/app.scss';

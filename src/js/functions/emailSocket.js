@@ -1,4 +1,4 @@
-import { emailConfigs } from './emailConfigs'
+import { emailConfigs } from '../../../configs/emailConfigs'
 
 const nodemailer = require('nodemailer')
 
@@ -34,7 +34,7 @@ const awsSendEmail = (email) => {
     let aws = require('aws-sdk')
 
     // configure AWS SDK
-    aws.config.loadFromPath('./src/js/containers/Contact/awsConfigs.json')
+    aws.config.loadFromPath('./configs/awsConfigs.json')
 
     // create Nodemailer SES transporter
     let transporter = nodemailer.createTransport({
