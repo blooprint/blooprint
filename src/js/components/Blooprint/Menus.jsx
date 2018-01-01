@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom'
 import Header from './dumb/Header'
-import Footer from './dumb/Footer'
 import { handleBrowserTitleChange } from '../../functions'
 
 class Menus extends Component {
@@ -17,25 +16,23 @@ class Menus extends Component {
                 <Header />
 
                 <div id="services">
-                    <h2>We provide restaurants with:</h2>
-                    <ul>
-                        <li className="menu_service_detail">a customer-focused and mobile-friendly menu website</li>
-                        <li className="menu_service_detail">state-of-the-art user-friendly and web-based menu software</li>
-                        <li className="menu_service_detail">total control and maintenance of all menu content</li>
-                        <li className="menu_service_detail">restaurant owners can focus on their menu data and entirely leave website maintenance to us</li>
+                    <h2 className="menu_service_center">We provide restaurants with</h2>
+                    <ul className="menu_service_topic">
+                        <li>a customer-focused and mobile-friendly <Link to={'/listing/listed'}>menu website</Link></li>
+                        <li>state-of-the-art, user-friendly and web-based <a href="https://github.com/blooprint/menus" target="_blank">menu software</a></li>
+                        <li>total control and maintenance of all menu content</li>
+                        <li>restaurant owners can focus on their menu data and entirely leave website maintenance and software structure to us</li>
                     </ul>
-                    <h2>Our software features:</h2>
-                    <ul>
-                        <li className="menu_service_detail">worry-free web-based spreadsheet control of menu data</li>
-                        <li className="menu_service_detail">menu content security locked under personal email password protection</li>
-                        <li className="menu_service_detail">live-time rendering</li>
-                        <li className="menu_service_detail"><a href="https://en.wikipedia.org/wiki/Search_engine_optimization">search engine optimization</a></li>
+                    <h2 className="menu_service_center">Our software features</h2>
+                    <ul className="menu_service_topic">
+                        <li>worry-free web-based <a href="https://www.google.com/sheets/about/" target="_blank">spreadsheet control</a> of menu data</li>
+                        <li>menu content security locked under personal email password protection</li>
+                        <li>live-time rendering</li>
+                        <li><a href="https://en.wikipedia.org/wiki/Search_engine_optimization">search engine optimization</a></li>
                     </ul>
                     <br />
-                    <h3>Your menu has room for unlimited customization.</h3>
-                    <p><Link to={'/'}>CONTACT US</Link> for pricing and more information.</p>
-
-                    <Footer />
+                    <h3 className="menu_service_center">Your menu has room for unlimited customization.</h3>
+                    <p className="menu_service_center"><Link to={'/'}>CONTACT US</Link> for pricing and more information.</p>
                 </div>
 
 

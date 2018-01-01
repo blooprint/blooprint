@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import MediaQuery from 'react-responsive'
 import { emailConfigs } from '../../../../../configs/emailConfigs'
 
 var io = require('socket.io-client')
@@ -34,7 +35,7 @@ class Form extends Component {
         return (
             <div className="blooprint_center_item">
 
-                Contact Us:
+                <p>Contact Us</p>
                 <input
                     className="blooprint_form_item"
                     placeholder="your email address"
@@ -48,7 +49,7 @@ class Form extends Component {
                     type="text"
                     ref={(input) => this.message = input} />
                 <button
-                    className="button"
+                    className="blooprint_form_item"
                     id="form_submit"
                     onClick={() => {
                         this.handleSubmitClick()
@@ -60,19 +61,15 @@ class Form extends Component {
     }
 }
 
-class ContactBlooprint extends Component {
+class Contact extends Component {
 
     render() {
         return(
-            <div className='body'>
-
-                <div id="center_content">
-                    <Form />
-                </div>
-
+            <div id="center_content">
+                <Form />
             </div>
         )
     }
 }
 
-export default ContactBlooprint
+export default Contact

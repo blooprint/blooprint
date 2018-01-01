@@ -1,6 +1,6 @@
 import React from 'react'
 
-var blooprintImage = require('../../../../assets/img/blooprint.png')
+import { blooprintImage } from '../../Blooprint/constants'
 
 const Loading = (props) => {
     return (

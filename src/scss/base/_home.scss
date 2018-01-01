@@ -3,22 +3,9 @@ body{
 	font-family: Courier;
 	font-size: 20px;
 }
-#center_content {
-	position: absolute;
-	top: 75%;
-	max-width: 100%;
-	width: 100%;
-	margin-bottom: 5%;
-}
-#video {
-	border: 11px solid #00f;
-	border-radius: 5px;
-}
 a {
-	// color: green;
 	font-weight: bold;
 	text-decoration: none;
-	// font-size: 23px;
 }
 a:hover {
 	color: orange;
@@ -27,53 +14,21 @@ p {
 	font-size: 20px;
 }
 .project_button {
-	display: block;
+	position: absolute;
+	max-width: 600px;
+	width: 100%;
+    top: 20%;
 	text-align: center;
 	height: 60px;
-	width: 30%;
-	border: 3px solid black;
+	border: 3px solid gray;
 	border-radius: 8px;
-	margin: 10px;
-	margin-left: -3px;
-	background-color: white;
-	bottom: 0;
-	color: #f00
-}
-.button {
-	display: inline-block;
-	text-align: center;
-	height: 45px;
-	width: 30%;
-	border: 2px solid green;
-	border-radius: 4px;
-	margin: 0;
-	margin-left: 0;
-	background-color: #0f0;
-	bottom: 0;
-	color: #000;
-}
-.button p {
-	margin-top: 12px;
-}
-.button:hover {
-	background-color: #f00;
-	border: 2px solid black;
-	color: white;
-}
-.button p {
-	vertical-align: middle;
-}
-#projects {
-	margin-left: auto;
-	margin-right: auto;
-	width: 600px;
+	background-color: #f4f8ff;
+	color: blue;
 }
 #form_submit {
-	width: 100%;
     background-color: #4CAF50;
     color: white;
     padding: 14px 20px;
-    margin: 8px 0;
     border: none;
     border-radius: 4px;
     cursor: pointer;

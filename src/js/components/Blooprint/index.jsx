@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom'
-import ContactBlooprint from '../../components/Blooprint/dumb/Contact'
+import Contact from '../../components/Blooprint/dumb/Contact'
 import Header from './dumb/Header'
+import Products from './dumb/Products'
 import { handleBrowserTitleChange } from '../../functions'
 
 class Blooprint extends Component {
@@ -12,18 +13,13 @@ class Blooprint extends Component {
 
     render() {
         return (
-            <div className='body'>
-
+            <div>
                 <Header />
-
-                <Link to={'/listing'}><div className="project_button" id="restaurant_button"><p>menu software</p></div></Link>
-
-                <div id="blooprint_center_content">
-                    <ContactBlooprint />
-                </div>
+                <Products />
+                <Contact />
             </div>
 
-        );
+        )
     }
 }
 
