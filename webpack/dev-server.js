@@ -4,11 +4,11 @@ const IS_PRODUCTION = require('./config').IS_PRODUCTION;
 const devServer = {
   contentBase: IS_PRODUCTION ? paths.build : paths.source,
   historyApiFallback: true,
-  port: 3000,
+  port: 8081,
   compress: IS_PRODUCTION,
   inline: !IS_PRODUCTION,
   hot: !IS_PRODUCTION,
-  host: '0.0.0.0',
+  host: '127.0.0.1',
   disableHostCheck: true, // To enable local network testing
   overlay: true,
   stats: {

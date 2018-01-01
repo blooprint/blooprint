@@ -19,16 +19,15 @@ class Menus extends Component {
                     <h2 className="menu_service_center">We provide restaurants with</h2>
                     <ul className="menu_service_topic">
                         <li>a customer-focused and mobile-friendly <Link to={'/listing/listed'}>menu website</Link></li>
-                        <li>state-of-the-art, user-friendly and web-based <a href="https://github.com/blooprint/menus" target="_blank">menu software</a></li>
+                        <li>social media connection</li>
                         <li>total control and maintenance of all menu content</li>
                         <li>restaurant owners can focus on their menu data and entirely leave website maintenance and software structure to us</li>
                     </ul>
                     <h2 className="menu_service_center">Our software features</h2>
                     <ul className="menu_service_topic">
-                        <li>worry-free web-based <a href="https://www.google.com/sheets/about/" target="_blank">spreadsheet control</a> of menu data</li>
-                        <li>menu content security locked under personal email password protection</li>
-                        <li>live-time rendering</li>
-                        <li><a href="https://en.wikipedia.org/wiki/Search_engine_optimization">search engine optimization</a></li>
+                        <li>worry-free, web-based <a href="https://www.google.com/sheets/about/" target="_blank">spreadsheet control</a> of menu data locked under personal email password protection</li>
+                        <li>live-time website rendering</li>
+                        <li><a href="https://en.wikipedia.org/wiki/Search_engine_optimization" target="_blank">search engine optimization</a></li>
                     </ul>
                     <br />
                     <h3 className="menu_service_center">Your menu has room for unlimited customization.</h3>
