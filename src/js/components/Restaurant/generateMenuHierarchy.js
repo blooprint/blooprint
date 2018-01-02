@@ -36,7 +36,18 @@ const generateMenuHierarchy = function(data) {
         var currentMenu = tableline.menu
         var currentSection = tableline.section
         if(data[index+1] === undefined) {
-            appendcurrentSectionItemsArray(tableline)
+            if(currentSection == prevSection) {
+                appendcurrentSectionItemsArray(tableline)
+            }
+            else {
+                currentMenuSectionsArray.push(currentSectionItemsArray)
+                currentSectionItemsArray = []
+                appendcurrentSectionItemsArray(tableline)
+                if(currentMenu != prevMenu){
+                    hierarchy.push(currentMenuSectionsArray)
+                    currentMenuSectionsArray = []
+                }
+            }
             currentMenuSectionsArray.push(currentSectionItemsArray)
             hierarchy.push(currentMenuSectionsArray)
         }
