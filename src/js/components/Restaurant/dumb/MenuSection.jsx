@@ -2,7 +2,7 @@ import React from 'react'
 import MediaQuery from 'react-responsive'
 
 import MenuItem from './MenuItem'
-import SectionComment from './SectionComment'
+import Comment from './Comment'
 
 class MenuSection extends React.Component {
 
@@ -22,6 +22,13 @@ class MenuSection extends React.Component {
         return (
             <div>
                 <MediaQuery maxWidth={767}>
+                    {this.props.list.map((item) => {
+                        if(item.menucomment !== undefined) {
+                            return(
+                                <Comment text={item.menucomment} />
+                            )
+                        }}
+                    )}
                     <h2 id="scrolled_open_section" className="mobile_section_header" onClick={() => {
                             this.props.setOpenedSectionIndex(this.props.sectionIndex)
                             this.setBrowsingWindowPosition()
@@ -33,7 +40,7 @@ class MenuSection extends React.Component {
                                 if(item.sectioncomment != 'undefined') {
                                     return (
                                         <div>
-                                            <SectionComment text={item.sectioncomment} />
+                                            <Comment text={item.sectioncomment} />
                                             <MenuItem item={item} key={item.id} />
                                         </div>
 
@@ -48,6 +55,13 @@ class MenuSection extends React.Component {
                 </MediaQuery>
 
                 <MediaQuery minWidth={768} maxWidth={991}>
+                    {this.props.list.map((item) => {
+                        if(item.menucomment !== undefined) {
+                            return(
+                                <Comment text={item.menucomment} />
+                            )
+                        }}
+                    )}
                     <h2 id="scrolled_open_section" className="section_header" onClick={() => {
                             this.props.setOpenedSectionIndex(this.props.sectionIndex)
                             this.setBrowsingWindowPosition()
@@ -58,7 +72,7 @@ class MenuSection extends React.Component {
                                 if(item.sectioncomment !== 'undefined') {
                                     return (
                                         <div>
-                                            <SectionComment text={item.sectioncomment} />
+                                            <Comment text={item.sectioncomment} />
                                             <MenuItem item={item} key={item.id} />
                                         </div>
 
@@ -73,6 +87,13 @@ class MenuSection extends React.Component {
                 </MediaQuery>
 
                 <MediaQuery minWidth={992}>
+                    {this.props.list.map((item) => {
+                        if(item.menucomment !== undefined) {
+                            return(
+                                <Comment text={item.menucomment} />
+                            )
+                        }}
+                    )}
                     <h2 id="scrolled_open_section" className="section_header" onClick={() => {
                             this.props.setOpenedSectionIndex(this.props.sectionIndex)
                             this.setBrowsingWindowPosition()
@@ -83,7 +104,7 @@ class MenuSection extends React.Component {
                                 if(item.sectioncomment !== 'undefined') {
                                     return (
                                         <div>
-                                            <SectionComment text={item.sectioncomment} />
+                                            <Comment text={item.sectioncomment} />
                                             <MenuItem item={item} key={item.id} />
                                         </div>
 

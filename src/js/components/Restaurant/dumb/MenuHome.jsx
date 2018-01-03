@@ -1,7 +1,5 @@
 import React, { Component } from 'react'
 import ViewSoretedMenuList from './ViewSoretedMenuList'
-// import ViewLunchDinner from './ViewLunchDinner'
-// import ViewDessert from './ViewDessert'
 import MenuHeader from './MenuHeader'
 import MenuSection from './MenuSection'
 import Footer from '../../Blooprint/dumb/Footer'

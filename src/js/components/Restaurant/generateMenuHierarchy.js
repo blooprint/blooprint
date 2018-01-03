@@ -28,7 +28,8 @@ const generateMenuHierarchy = function(data) {
             itemtext: tableline.itemtext,
             itemsubtext: tableline.itemsubtext,
             price: tableline.price,
-            sectioncomment: tableline.sectioncomment
+            sectioncomment: tableline.sectioncomment,
+            menucomment: tableline.menucomment
         }
         currentSectionItemsArray.push(item)
     }
