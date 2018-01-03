@@ -27,8 +27,8 @@ class MenuSection extends React.Component {
                             return(
                                 <Comment text={item.menucomment} />
                             )
-                        }}
-                    )}
+                        }
+                    })}
                     <h2 id="scrolled_open_section" className="mobile_section_header" onClick={() => {
                             this.props.setOpenedSectionIndex(this.props.sectionIndex)
                             this.setBrowsingWindowPosition()
@@ -36,8 +36,7 @@ class MenuSection extends React.Component {
                     <div id="menu_item_list">
                         { (this.props.restaurant.openedSectionIndex == this.props.sectionIndex) && (!this.props.restaurant.freshLoaded) ? <ul id="mobile_menu_section">
                             {this.props.list.map((item, index) => {
-
-                                if(item.sectioncomment != 'undefined') {
+                                if(item.sectioncomment != undefined) {
                                     return (
                                         <div>
                                             <Comment text={item.sectioncomment} />
@@ -46,9 +45,11 @@ class MenuSection extends React.Component {
 
                                     )
                                 }
-                                return (
-                                    <MenuItem item={item} key={item.id} />
-                                )
+                                else {
+                                    return (
+                                        <MenuItem item={item} key={item.id} />
+                                    )
+                                }
                             })}
                         </ul> : null }
                     </div>
@@ -60,8 +61,8 @@ class MenuSection extends React.Component {
                             return(
                                 <Comment text={item.menucomment} />
                             )
-                        }}
-                    )}
+                        }
+                    })}
                     <h2 id="scrolled_open_section" className="section_header" onClick={() => {
                             this.props.setOpenedSectionIndex(this.props.sectionIndex)
                             this.setBrowsingWindowPosition()
@@ -69,7 +70,7 @@ class MenuSection extends React.Component {
                     <div id="menu_item_list">
                         { (this.props.restaurant.openedSectionIndex == this.props.sectionIndex) && (!this.props.restaurant.freshLoaded) ? <ul id="mobile_menu_section">
                             {this.props.list.map((item) => {
-                                if(item.sectioncomment !== 'undefined') {
+                                if(item.sectioncomment !== undefined) {
                                     return (
                                         <div>
                                             <Comment text={item.sectioncomment} />
@@ -78,9 +79,11 @@ class MenuSection extends React.Component {
 
                                     )
                                 }
-                                return (
-                                    <MenuItem item={item} key={item.id} />
-                                )
+                                else {
+                                    return (
+                                        <MenuItem item={item} key={item.id} />
+                                    )
+                                }
                             })}
                         </ul> : null }
                     </div>
@@ -92,8 +95,8 @@ class MenuSection extends React.Component {
                             return(
                                 <Comment text={item.menucomment} />
                             )
-                        }}
-                    )}
+                        }
+                    })}
                     <h2 id="scrolled_open_section" className="section_header" onClick={() => {
                             this.props.setOpenedSectionIndex(this.props.sectionIndex)
                             this.setBrowsingWindowPosition()
@@ -101,7 +104,7 @@ class MenuSection extends React.Component {
                     <div id="menu_item_list">
                         { (this.props.restaurant.openedSectionIndex == this.props.sectionIndex) && (!this.props.restaurant.freshLoaded) ? <ul id="mobile_menu_section">
                             {this.props.list.map((item) => {
-                                if(item.sectioncomment !== 'undefined') {
+                                if(item.sectioncomment !== undefined) {
                                     return (
                                         <div>
                                             <Comment text={item.sectioncomment} />
@@ -110,9 +113,11 @@ class MenuSection extends React.Component {
 
                                     )
                                 }
-                                return (
-                                    <MenuItem item={item} key={item.id} />
-                                )
+                                else {
+                                    return (
+                                        <MenuItem item={item} key={item.id} />
+                                    )
+                                }
                             })}
                         </ul> : null }
                     </div>
