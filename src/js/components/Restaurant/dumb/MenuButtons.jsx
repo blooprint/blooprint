@@ -29,6 +29,24 @@ class MenuButtons extends Component {
         window.scrollTo(0, 0)
     }
 
+    componentDidMount() {
+        this.menuIndexArray.map((menu, index) => {
+            if(index%2 != 0) { // right button
+                var rButton = document.getElementsByClassName("mobile_menu_button")[index]
+                var rHeight = window.getComputedStyle(rButton,null).getPropertyValue("height")
+                var lButton = document.getElementsByClassName("mobile_menu_button")[index-1]
+                var lHeight = window.getComputedStyle(lButton,null).getPropertyValue("height")
+
+                if(rHeight > lHeight) {
+                    lButton.setAttribute("style", "height:" + rHeight)
+                }
+                else {
+                    rButton.setAttribute("style", "height:" + lHeight)
+                }
+            }
+        })
+    }
+
     render() {
         const buttonsArray = this.props.restaurant.menus.filter(this.isTopOrBottomButton)
         return (
