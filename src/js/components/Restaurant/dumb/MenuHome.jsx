@@ -16,7 +16,7 @@ class MenuHome extends Component {
             <div>
                 <MenuHeader className="menu_block" {...this.props} />
                 <MenuButtons topbottom={'top'} {...this.props} />
-                <ViewSoretedMenuList {...this.props} />
+                { this.props.restaurant.hasOpened ? <ViewSoretedMenuList {...this.props} /> : null }
                 <MenuButtons topbottom={'bottom'} {...this.props} />
                 <Footer />
             </div>

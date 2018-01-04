@@ -123,12 +123,6 @@
     margin-top: 17px;
     font-size: 18px;
 }
-#button_lunch_dinner {
-    color: red;
-}
-#button_dessert {
-    color: yellow;
-}
 .nav_button {
     display: inline-block;
 	text-align: center;
@@ -139,17 +133,6 @@
     margin-left: 10px;
 	margin-right: 10px;
 	background-color: black;
-}
-#nav_viewHome {
-    position: fixed;
-    left: 30px;
-    top: 200px;
-    height: 45px;
-	width: 100px;
-	border: 2px solid green;
-	border-radius: 4px;
-    margin-left: 10px;
-	margin-right: 10px;
 }
 .nav_button:hover {
     background-color: #282828;

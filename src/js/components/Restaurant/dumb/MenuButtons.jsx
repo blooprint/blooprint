@@ -26,6 +26,7 @@ class MenuButtons extends Component {
     }
 
     setBrowsingWindowPosition() {
+        this.props.setHasOpened()
         window.scrollTo(0, 0)
     }
 

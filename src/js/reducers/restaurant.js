@@ -6,7 +6,8 @@ const initialState = {
 	menus: [],
 	openedMenuIndex: 0,
 	openedSectionIndex: 0,
-	freshLoaded: true
+	freshLoaded: true,
+	hasOpened: false
 }
 
 export default function restaurant(state = initialState, action) {
@@ -35,6 +36,11 @@ export default function restaurant(state = initialState, action) {
 				openedSectionIndex: action.index
 			}
 
+		case 'SET_HAS_OPENED':
+			return {
+				...state,
+				hasOpened: true
+			}
 
 		default:
 			return state

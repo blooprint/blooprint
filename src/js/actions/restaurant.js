@@ -16,3 +16,8 @@ export function setOpenedSectionIndex(index) {
         index
     }
 }
+export function setHasOpened() {
+    return {
+        type: 'SET_HAS_OPENED'
+    }
+}
